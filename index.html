@@ -1347,8 +1347,8 @@ body {
       <!-- ──────── 02. VIDÉOS ──────── -->
       <section class="chapter" id="ch-videos">
         <div class="chapter-tag">Chapitre 03 · Process technique</div>
-        <h1 class="chapter-title">Les <em>7 vidéos</em> à maîtriser.</h1>
-        <p class="chapter-intro">Filmées à la première personne avec lunettes Meta, sur plusieurs véhicules réels. Regarde dans l'ordre, prends des notes, marque comme terminé. Tu peux y revenir à n'importe quel moment.</p>
+        <h1 class="chapter-title">Les <em>5 vidéos</em> à maîtriser.</h1>
+        <p class="chapter-intro">Filmées à la première personne avec lunettes Meta, sur plusieurs véhicules réels. Tout le process, étape par étape, du branchement jusqu'à l'envoi du gaz. Regarde dans l'ordre, prends des notes, marque comme terminé. Tu peux y revenir à n'importe quel moment.</p>
 
         <div class="video-list">
           <div class="video-card" data-video="0">
@@ -1410,8 +1410,8 @@ body {
             <div class="video-meta">
               <div class="video-num">03</div>
               <div>
-                <div class="video-info-title">Le test du compresseur</div>
-                <div class="video-info-desc">Pré-remplir le circuit, écouter les fuites, démarrer le véhicule, valider le compresseur. Distinguer un problème de gaz d'un problème mécanique.</div>
+                <div class="video-info-title">Premier jet &amp; repérage d'une fuite</div>
+                <div class="video-info-desc">Manomètre branché, premier jet de gaz envoyé par paliers de 50 à 100 g, puis on écoute. Ici une fuite audible : grosse fuite, le client doit le savoir avant d'aller plus loin.</div>
               </div>
               <button class="video-mark-btn" onclick="toggleVideo(3, this)">Marquer terminé</button>
             </div>
@@ -1422,36 +1422,13 @@ body {
             <div class="video-meta">
               <div class="video-num">04</div>
               <div>
-                <div class="video-info-title">La recharge complète au bon grammage</div>
-                <div class="video-info-desc">Utiliser la balance frigorifique, envoyer le gaz par paliers, accélérer pour faire tirer le compresseur. Démonstration sur Clio 3 (500 g).</div>
+                <div class="video-info-title">Le test du compresseur</div>
+                <div class="video-info-desc">Manomètre branché, dernier contrôle, puis le test : compresseur à l'arrêt la pression reste haute, compresseur activé l'aiguille descend. Deuxième exemple sur un poids lourd, jusqu'à l'envoi du gaz. Le grammage exact de chaque véhicule est dans tes Ressources.</div>
               </div>
               <button class="video-mark-btn" onclick="toggleVideo(4, this)">Marquer terminé</button>
             </div>
           </div>
 
-          <div class="video-card" data-video="5">
-            <div class="video-thumb"><div class="video-play">▶</div><div class="video-placeholder-text">Vidéo bientôt disponible</div></div>
-            <div class="video-meta">
-              <div class="video-num">05</div>
-              <div>
-                <div class="video-info-title">Cas particuliers & gestion client</div>
-                <div class="video-info-desc">Compresseur HS, capteur HP défaillant, micro-fuite. Comment expliquer au client, comment facturer même sans pouvoir recharger.</div>
-              </div>
-              <button class="video-mark-btn" onclick="toggleVideo(5, this)">Marquer terminé</button>
-            </div>
-          </div>
-
-          <div class="video-card" data-video="6">
-            <div class="video-thumb"><div class="video-play">▶</div><div class="video-placeholder-text">Vidéo bientôt disponible</div></div>
-            <div class="video-meta">
-              <div class="video-num">06</div>
-              <div>
-                <div class="video-info-title">R134a vs R1234yf — savoir choisir</div>
-                <div class="video-info-desc">Quel gaz pour quel véhicule, quels arguments donner au client, comment facturer 80 € au lieu de 40 € en toute transparence.</div>
-              </div>
-              <button class="video-mark-btn" onclick="toggleVideo(6, this)">Marquer terminé</button>
-            </div>
-          </div>
         </div>
 
         <h2 class="section-h2" style="margin-top:60px">Les pièces à reconnaître</h2>
@@ -2782,7 +2759,7 @@ function toggleVideo(num, btn) {
 
 function updateGlobalProgress() {
   const total = 5;
-  const done = Object.values(progress.videos).filter(Boolean).length;
+  const done = [0,1,2,3,4].filter(n => progress.videos[n]).length;
   const pct = Math.round((done / total) * 100);
   document.getElementById('prog-fill').style.width = pct + '%';
   document.getElementById('prog-count').textContent = done + ' / ' + total;
