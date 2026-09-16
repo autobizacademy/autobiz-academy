@@ -235,45 +235,6 @@ body {
 .section-p strong { color: var(--ink); font-weight: 600; }
 
 /* ── PRÉSENTATION ── */
-.intro-video-block {
-  margin: 0 auto 44px;
-  max-width: 380px;
-  text-align: center;
-}
-.intro-video-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-.intro-video-frame {
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  background: #000;
-  border: 0.5px solid rgba(201,168,76,0.35);
-  box-shadow: 0 18px 50px rgba(26,26,23,0.28);
-  aspect-ratio: 9 / 16;
-}
-.intro-video-frame video {
-  display: block;
-  width: 100%; height: 100%;
-  object-fit: contain;
-  background: #000;
-}
-.intro-video-fallback {
-  display: block;
-  margin-top: 10px;
-  font-size: 13px; font-weight: 600;
-  color: var(--gold);
-  text-decoration: none;
-}
-.intro-video-fallback:hover { text-decoration: underline; }
-@media (max-width: 480px) {
-  .intro-video-block { max-width: 100%; margin-bottom: 32px; }
-}
-
 .welcome-card {
   background: linear-gradient(135deg, var(--ink) 0%, var(--dark2) 100%);
   color: var(--white);
@@ -1333,18 +1294,7 @@ body {
       <section class="chapter active" id="ch-intro">
         <div class="chapter-tag">Chapitre 01 · Bienvenue</div>
         <h1 class="chapter-title">Bienvenue dans <em>l'académie</em>.</h1>
-        <p class="chapter-intro">Tu viens d'investir en toi. Cette formation, c'est un raccourci de plusieurs mois d'apprentissage compressé en une plateforme. Commence par regarder la vidéo ci-dessous — elle te montre en 2 minutes comment tout s'articule et où tu vas. Ensuite, lis cette page jusqu'au bout.</p>
-
-        <div class="intro-video-block">
-          <div class="intro-video-label">À regarder en premier</div>
-          <div class="intro-video-frame">
-            <video controls preload="none" playsinline poster="intro-formation-poster.jpg">
-              <source src="intro-formation.mp4" type="video/mp4">
-              Ton navigateur ne supporte pas la vidéo HTML5.
-            </video>
-          </div>
-          <a class="intro-video-fallback" href="intro-formation.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
-        </div>
+        <p class="chapter-intro">Tu viens d'investir en toi. Cette formation, c'est un raccourci de plusieurs mois d'apprentissage compressé en une plateforme. Lis cette page jusqu'au bout — elle te dit comment l'utiliser pour aller le plus vite possible vers ta première prestation rentable.</p>
 
         <div class="welcome-card">
           <h3>Ton objectif après cette formation : <em>ta première prestation payée</em>.</h3>
@@ -1397,18 +1347,18 @@ body {
       <!-- ──────── 02. VIDÉOS ──────── -->
       <section class="chapter" id="ch-videos">
         <div class="chapter-tag">Chapitre 03 · Process technique</div>
-        <h1 class="chapter-title">Les <em>5 vidéos</em> à maîtriser.</h1>
-        <p class="chapter-intro">Filmées à la première personne avec lunettes Meta, sur plusieurs véhicules réels. Tout le process, étape par étape, du branchement jusqu'à l'envoi du gaz. Regarde dans l'ordre, prends des notes, marque comme terminé. Tu peux y revenir à n'importe quel moment.</p>
+        <h1 class="chapter-title">Les <em>7 vidéos</em> à maîtriser.</h1>
+        <p class="chapter-intro">Filmées à la première personne avec lunettes Meta, sur plusieurs véhicules réels. Regarde dans l'ordre, prends des notes, marque comme terminé. Tu peux y revenir à n'importe quel moment.</p>
 
         <div class="video-list">
           <div class="video-card" data-video="0">
             <div class="video-thumb" style="cursor:default">
               <video controls preload="none" poster="video-1-materiel-poster.jpg" style="width:100%;height:100%;object-fit:contain;background:#000">
-                <source src="video-1-materiel-v2.mp4" type="video/mp4">
+                <source src="video-1-materiel.mp4" type="video/mp4">
                 Ton navigateur ne supporte pas la vidéo HTML5.
               </video>
             </div>
-            <a href="video-1-materiel-v2.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+            <a href="video-1-materiel.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
             <div class="video-meta">
               <div class="video-num">00</div>
               <div>
@@ -1422,11 +1372,11 @@ body {
           <div class="video-card" data-video="1">
             <div class="video-thumb" style="cursor:default">
               <video controls preload="none" poster="video-2-raccords-poster.jpg" style="width:100%;height:100%;object-fit:contain;background:#000">
-                <source src="video-2-raccords-v2.mp4" type="video/mp4">
+                <source src="video-2-raccords.mp4" type="video/mp4">
                 Ton navigateur ne supporte pas la vidéo HTML5.
               </video>
             </div>
-            <a href="video-2-raccords-v2.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+            <a href="video-2-raccords.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
             <div class="video-meta">
               <div class="video-num">01</div>
               <div>
@@ -1440,11 +1390,11 @@ body {
           <div class="video-card" data-video="2">
             <div class="video-thumb" style="cursor:default">
               <video controls preload="none" poster="video-3-installation-poster.jpg" style="width:100%;height:100%;object-fit:contain;background:#000">
-                <source src="video-3-installation-v2.mp4" type="video/mp4">
+                <source src="video-3-installation.mp4" type="video/mp4">
                 Ton navigateur ne supporte pas la vidéo HTML5.
               </video>
             </div>
-            <a href="video-3-installation-v2.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+            <a href="video-3-installation.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
             <div class="video-meta">
               <div class="video-num">02</div>
               <div>
@@ -1456,29 +1406,52 @@ body {
           </div>
 
           <div class="video-card" data-video="3">
-            <div class="video-thumb"><video controls preload="none" poster="video-4-fuite-poster.jpg" style="width:100%;height:100%;object-fit:contain;background:#000"><source src="video-4-fuite-v2.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div><a href="video-4-fuite-v2.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+            <div class="video-thumb"><div class="video-play">▶</div><div class="video-placeholder-text">Vidéo bientôt disponible</div></div>
             <div class="video-meta">
               <div class="video-num">03</div>
               <div>
-                <div class="video-info-title">Premier jet &amp; repérage d'une fuite</div>
-                <div class="video-info-desc">Manomètre branché, premier jet de gaz envoyé par paliers de 50 à 100 g, puis on écoute. Ici une fuite audible : grosse fuite, le client doit le savoir avant d'aller plus loin.</div>
+                <div class="video-info-title">Le test du compresseur</div>
+                <div class="video-info-desc">Pré-remplir le circuit, écouter les fuites, démarrer le véhicule, valider le compresseur. Distinguer un problème de gaz d'un problème mécanique.</div>
               </div>
               <button class="video-mark-btn" onclick="toggleVideo(3, this)">Marquer terminé</button>
             </div>
           </div>
 
           <div class="video-card" data-video="4">
-            <div class="video-thumb"><video controls preload="none" poster="video-5-compresseur-poster.jpg" style="width:100%;height:100%;object-fit:contain;background:#000"><source src="video-5-compresseur-v3.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div><a href="video-5-compresseur-v3.mp4" target="_blank" rel="noopener" style="display:block;text-align:center;padding:10px;font-size:13px;font-weight:600;color:var(--gold);background:#faf7f0;border-top:1px solid var(--border-light);text-decoration:none">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+            <div class="video-thumb"><div class="video-play">▶</div><div class="video-placeholder-text">Vidéo bientôt disponible</div></div>
             <div class="video-meta">
               <div class="video-num">04</div>
               <div>
-                <div class="video-info-title">Le test du compresseur</div>
-                <div class="video-info-desc">Manomètre branché, dernier contrôle, puis le test : compresseur à l'arrêt la pression reste haute, compresseur activé l'aiguille descend. Deuxième exemple sur un poids lourd, jusqu'à l'envoi du gaz. Le grammage exact de chaque véhicule est dans tes Ressources.</div>
+                <div class="video-info-title">La recharge complète au bon grammage</div>
+                <div class="video-info-desc">Utiliser la balance frigorifique, envoyer le gaz par paliers, accélérer pour faire tirer le compresseur. Démonstration sur Clio 3 (500 g).</div>
               </div>
               <button class="video-mark-btn" onclick="toggleVideo(4, this)">Marquer terminé</button>
             </div>
           </div>
 
+          <div class="video-card" data-video="5">
+            <div class="video-thumb"><div class="video-play">▶</div><div class="video-placeholder-text">Vidéo bientôt disponible</div></div>
+            <div class="video-meta">
+              <div class="video-num">05</div>
+              <div>
+                <div class="video-info-title">Cas particuliers & gestion client</div>
+                <div class="video-info-desc">Compresseur HS, capteur HP défaillant, micro-fuite. Comment expliquer au client, comment facturer même sans pouvoir recharger.</div>
+              </div>
+              <button class="video-mark-btn" onclick="toggleVideo(5, this)">Marquer terminé</button>
+            </div>
+          </div>
+
+          <div class="video-card" data-video="6">
+            <div class="video-thumb"><div class="video-play">▶</div><div class="video-placeholder-text">Vidéo bientôt disponible</div></div>
+            <div class="video-meta">
+              <div class="video-num">06</div>
+              <div>
+                <div class="video-info-title">R134a vs R1234yf — savoir choisir</div>
+                <div class="video-info-desc">Quel gaz pour quel véhicule, quels arguments donner au client, comment facturer 80 € au lieu de 40 € en toute transparence.</div>
+              </div>
+              <button class="video-mark-btn" onclick="toggleVideo(6, this)">Marquer terminé</button>
+            </div>
+          </div>
         </div>
 
         <h2 class="section-h2" style="margin-top:60px">Les pièces à reconnaître</h2>
@@ -2809,7 +2782,7 @@ function toggleVideo(num, btn) {
 
 function updateGlobalProgress() {
   const total = 5;
-  const done = [0,1,2,3,4].filter(n => progress.videos[n]).length;
+  const done = Object.values(progress.videos).filter(Boolean).length;
   const pct = Math.round((done / total) * 100);
   document.getElementById('prog-fill').style.width = pct + '%';
   document.getElementById('prog-count').textContent = done + ' / ' + total;
