@@ -235,6 +235,45 @@ body {
 .section-p strong { color: var(--ink); font-weight: 600; }
 
 /* ── PRÉSENTATION ── */
+.intro-video-block {
+  margin: 0 auto 44px;
+  max-width: 380px;
+  text-align: center;
+}
+.intro-video-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.intro-video-frame {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+  border: 0.5px solid rgba(201,168,76,0.35);
+  box-shadow: 0 18px 50px rgba(26,26,23,0.28);
+  aspect-ratio: 9 / 16;
+}
+.intro-video-frame video {
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+.intro-video-fallback {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px; font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.intro-video-fallback:hover { text-decoration: underline; }
+@media (max-width: 480px) {
+  .intro-video-block { max-width: 100%; margin-bottom: 32px; }
+}
+
 .welcome-card {
   background: linear-gradient(135deg, var(--ink) 0%, var(--dark2) 100%);
   color: var(--white);
@@ -1294,7 +1333,18 @@ body {
       <section class="chapter active" id="ch-intro">
         <div class="chapter-tag">Chapitre 01 · Bienvenue</div>
         <h1 class="chapter-title">Bienvenue dans <em>l'académie</em>.</h1>
-        <p class="chapter-intro">Tu viens d'investir en toi. Cette formation, c'est un raccourci de plusieurs mois d'apprentissage compressé en une plateforme. Lis cette page jusqu'au bout — elle te dit comment l'utiliser pour aller le plus vite possible vers ta première prestation rentable.</p>
+        <p class="chapter-intro">Tu viens d'investir en toi. Cette formation, c'est un raccourci de plusieurs mois d'apprentissage compressé en une plateforme. Commence par regarder la vidéo ci-dessous — elle te montre en 2 minutes comment tout s'articule et où tu vas. Ensuite, lis cette page jusqu'au bout.</p>
+
+        <div class="intro-video-block">
+          <div class="intro-video-label">À regarder en premier</div>
+          <div class="intro-video-frame">
+            <video controls preload="none" playsinline poster="intro-formation-poster.jpg">
+              <source src="intro-formation.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="intro-video-fallback" href="intro-formation.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+        </div>
 
         <div class="welcome-card">
           <h3>Ton objectif après cette formation : <em>ta première prestation payée</em>.</h3>
