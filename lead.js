@@ -5,7 +5,7 @@
   'use strict';
 
   /* ---- 1. COLLE ICI L'URL /exec DE TON APPS SCRIPT ---- */
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbybiIStwFkD8pUvqdn5D_lWatJ-ONbWaiZT91aN1tr_501xWU3Ej4h_VRVzcNgkfnR5/exec';
   /* ----------------------------------------------------- */
 
   var WA = '33756946616';
