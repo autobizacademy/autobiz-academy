@@ -1,6 +1,6 @@
 {
   "name": "autobiz-academy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Site AutoBiz Academy : pages de vente publiques + espace membre protege",
   "dependencies": {
