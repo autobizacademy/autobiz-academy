@@ -20,8 +20,35 @@
     return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(t);
   }
 
+  /* ADS = pub.html (publicites) · BIO = bio.html (lien en bio) · SITE = espace membre */
+  function canal() {
+    var f = (location.pathname || '').split('/').pop().toLowerCase();
+    if (f.indexOf('pub') === 0) return 'ADS';
+    if (f.indexOf('bio') === 0) return 'BIO';
+    return 'SITE';
+  }
+
+  /* Recupere les parametres de campagne et les garde le temps de la visite */
+  function utm() {
+    var q = {};
+    try {
+      var s = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+        .forEach(function (k) { var v = s.get(k); if (v) q[k] = v; });
+      if (Object.keys(q).length) {
+        sessionStorage.setItem('abz_utm', JSON.stringify(q));
+      } else {
+        var st = sessionStorage.getItem('abz_utm');
+        if (st) q = JSON.parse(st);
+      }
+    } catch (e) { /* navigation privee, stockage bloque : on continue sans */ }
+    return Object.keys(q).map(function (k) { return q[k]; }).join(' / ');
+  }
+
   function send(d) {
     d.page = location.pathname || '/';
+    var u = utm();
+    d.source = canal() + (d.source ? ' \u00b7 ' + d.source : '') + (u ? ' \u00b7 ' + u : '');
     if (!ENDPOINT) return Promise.reject(new Error('no-endpoint'));
     var body = new URLSearchParams();
     Object.keys(d).forEach(function (k) { body.append(k, d[k] == null ? '' : String(d[k])); });
