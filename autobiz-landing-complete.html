@@ -781,6 +781,14 @@ footer span { color: var(--gold); }
         <input class="form-input" type="tel" placeholder="+33 6 00 00 00 00" id="f-tel">
       </div>
       <div class="form-group">
+        <label class="form-label">Ton email</label>
+        <input class="form-input" type="email" autocomplete="email" placeholder="prenom@email.com" id="f-email">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ta ville</label>
+        <input class="form-input" type="text" placeholder="Cergy, Paris, Lyon..." id="f-ville">
+      </div>
+      <div class="form-group">
         <label class="form-label">Tu es plutôt...</label>
         <select class="form-select" id="f-profil">
           <option value="">Sélectionne ton profil</option>
@@ -801,6 +809,7 @@ footer span { color: var(--gold); }
           <option>La semaine prochaine</option>
         </select>
       </div>
+      <input id="f-website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
       <button class="form-btn" onclick="submitForm()">Confirmer ma réservation →</button>
     </div>
     <div class="form-success" id="form-success">
@@ -817,12 +826,31 @@ function closeModal(){ document.getElementById('overlay').classList.remove('open
 function closeModalOutside(e){ if(e.target===document.getElementById('overlay'))closeModal(); }
 
 function submitForm(){
-  const nom = document.getElementById('f-nom').value.trim();
-  const tel = document.getElementById('f-tel').value.trim();
+  const v = function(id){ const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  const nom = v('f-nom'), tel = v('f-tel');
   if(!nom || !tel){ alert('Merci de renseigner ton prénom et ton numéro.'); return; }
-  document.getElementById('form-content').style.display='none';
-  document.getElementById('form-success').style.display='block';
-  setTimeout(closeModal, 4000);
+  if(v('f-website')){ closeModal(); return; }   /* piège à bots */
+
+  const data = {
+    nom: nom, tel: tel, email: v('f-email'), ville: v('f-ville'),
+    objectif: v('f-profil'), profil: v('f-profil'), dispo: v('f-dispo'),
+    source: 'landing-complete'
+  };
+
+  const btn = document.querySelector('#form-content .form-btn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Envoi...'; }
+
+  const done = function(){
+    document.getElementById('form-content').style.display='none';
+    document.getElementById('form-success').style.display='block';
+    setTimeout(closeModal, 4000);
+  };
+
+  window.autobizSendLead(data).then(done).catch(function(){
+    /* Aucun lead perdu : bascule WhatsApp avec les infos pré-remplies */
+    window.open(window.autobizWaFallback(data), '_blank', 'noopener');
+    done();
+  });
 }
 
 function toggleFaq(btn){
@@ -844,5 +872,6 @@ document.querySelectorAll('.market-card,.adv-card,.pack-item,.cible-card').forEa
   observer.observe(el);
 });
 </script>
+<script src="lead.js"></script>
 </body>
 </html>
