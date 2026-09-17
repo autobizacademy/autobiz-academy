@@ -1,0 +1,9 @@
+{
+  "name": "autobiz-academy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site AutoBiz Academy : pages de vente publiques + espace membre protege",
+  "dependencies": {
+    "@vercel/edge": "^1.1.1"
+  }
+}
