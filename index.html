@@ -794,13 +794,13 @@ body {
 }
 .part-meta { padding: 14px 16px; }
 /* ── Récap vidéo chapitre 02 ── */
-.ch2-wrap .rv-frame {
+.ch2-wrap .rv-frame, #recap-video-03 .rv-frame {
   position: relative; max-width: 320px; margin: 22px auto 0;
   aspect-ratio: 9 / 16; background: #000; border-radius: 10px; overflow: hidden;
   border: 1px solid var(--or-border); box-shadow: 0 16px 44px rgba(26,26,23,0.22);
 }
-.ch2-wrap .rv-frame video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
-.ch2-wrap .rv-fallback {
+.ch2-wrap .rv-frame video, #recap-video-03 .rv-frame video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.ch2-wrap .rv-fallback, #recap-video-03 .rv-fallback {
   display: block; text-align: center; font-size: 12px; color: var(--texte3);
   margin-top: 12px; text-decoration: none;
 }
