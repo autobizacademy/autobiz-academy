@@ -147,6 +147,7 @@ body {
 /* ── MAIN CONTENT ── */
 .main {
   flex: 1;
+  min-width: 0;
   margin-left: 280px;
   background: var(--cream);
   color: var(--ink);
@@ -793,6 +794,18 @@ body {
   letter-spacing: 0; color: #8a8880; line-height: 1.5; font-weight: 400;
 }
 .part-meta { padding: 14px 16px; }
+/* ── Récap vidéo chapitre 02 ── */
+.ch2-wrap .rv-frame, #recap-video-03 .rv-frame, #recap-video-06 .rv-frame {
+  position: relative; max-width: 320px; margin: 22px auto 0;
+  aspect-ratio: 9 / 16; background: #000; border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--or-border); box-shadow: 0 16px 44px rgba(26,26,23,0.22);
+}
+.ch2-wrap .rv-frame video, #recap-video-03 .rv-frame video, #recap-video-06 .rv-frame video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.ch2-wrap .rv-fallback, #recap-video-03 .rv-fallback, #recap-video-06 .rv-fallback {
+  display: block; text-align: center; font-size: 12px; color: var(--texte3);
+  margin-top: 12px; text-decoration: none;
+}
+.ch2-wrap .rv-fallback:hover { color: var(--or); text-decoration: underline; }
 .part-name {
   font-family: 'Playfair Display', serif;
   font-size: 15px; font-weight: 700;
@@ -1875,6 +1888,29 @@ body {
             <li>Répondre rapidement aux messages — le client contacte souvent plusieurs prestataires en même temps</li>
           </ul>
         </div>
+
+        <div class="divider"></div>
+
+        <!-- RÉCAP VIDÉO -->
+        <div class="section reveal" id="recap-video-06">
+          <div class="section-header">
+            <div class="s-icon">🎬</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Récap · 1 min 45</div>
+              <h2>Les 6 canaux pour trouver tes clients</h2>
+            </div>
+          </div>
+          <div class="prose">
+            <p>Affichage, garages, parcs auto, réseaux, Google, annonces : revois chaque canal en vidéo. Ensuite, <strong>choisis celui où tu es le plus à l'aise et pratique-le sans modération</strong> — en pleine chaleur, la demande dépasse l'offre.</p>
+          </div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="recap-06-pov-poster.jpg">
+              <source src="recap-06-pov.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="rv-fallback" href="recap-06-pov.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+        </div>
       </section>
 
       <!-- ──────── 04. JARGON & TIPS ──────── -->
@@ -2392,6 +2428,29 @@ body {
 
   <div class="divider"></div>
 
+  <!-- RÉCAP VIDÉO -->
+  <div class="section reveal" id="recap-video">
+    <div class="section-header">
+      <div class="s-icon">🎬</div>
+      <div class="s-title">
+        <div class="s-eyebrow">Récap · 1 minute</div>
+        <h2>Tout le chapitre en une vidéo</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Avant de valider tes 7 points, revois l'essentiel en situation : ta première recharge, du tuyau épais jusqu'au compresseur qui tire. <strong>Une minute, tout le chapitre.</strong></p>
+    </div>
+    <div class="rv-frame">
+      <video controls preload="none" playsinline poster="recap-02-pov-poster.jpg">
+        <source src="recap-02-pov.mp4" type="video/mp4">
+        Ton navigateur ne supporte pas la vidéo HTML5.
+      </video>
+    </div>
+    <a class="rv-fallback" href="recap-02-pov.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+  </div>
+
+  <div class="divider"></div>
+
   <!-- KC -->
   <div class="kc-block reveal">
     <h3>Avant de continuer</h3>
@@ -2673,20 +2732,6 @@ body {
           </div>
 
         </div>
-
-        <h2 class="section-h2" style="margin-top:56px">Vidéo récap — pour retenir l'essentiel</h2>
-        <p class="section-p">Le gaz, les valves, le manomètre, le process de recharge : le résumé du chapitre en vidéo, format court. À revoir avant de passer au chapitre suivant.</p>
-
-        <div class="intro-video-block" style="margin-top:24px">
-          <div class="intro-video-label">Récap du chapitre</div>
-          <div class="intro-video-frame">
-            <video controls preload="none" playsinline poster="recap-02-pov-poster.jpg">
-              <source src="recap-02-pov.mp4" type="video/mp4">
-              Ton navigateur ne supporte pas la vidéo HTML5.
-            </video>
-          </div>
-          <a class="intro-video-fallback" href="recap-02-pov.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
-        </div>
       </section>
 
       <!-- ──────── 05. RESSOURCES ──────── -->
@@ -2803,7 +2848,7 @@ body {
 
       <!-- ──────── 07. MATÉRIEL RECOMMANDÉ ──────── -->
       <section class="chapter" id="ch-materiel">
-        <div class="chapter-tag">Chapitre 03 · Matériel recommandé</div>
+        <div class="chapter-tag">Chapitre 03 · Matériel</div>
         <h1 class="chapter-title">Le matériel <em>qui fait le travail.</em></h1>
         <p class="chapter-intro">Tout ce dont tu as besoin rentre dans un sac à dos. Voici la liste complète — avec les liens Amazon pour commander directement. Prix vérifiés, rapport qualité/prix validé sur le terrain.</p>
 
@@ -3041,6 +3086,30 @@ body {
           </div>
           <div style="margin-top:16px;font-size:12px;color:rgba(245,244,240,0.4);border-top:0.5px solid rgba(201,168,76,0.15);padding-top:14px">Hors bouteille de gaz R134a (~300–400€ pour 12kg) et R1234yf si tu cibles les véhicules récents. La bouteille est rentabilisée sur les premières journées de travail.</div>
         </div>
+        <div class="divider"></div>
+
+        <!-- RÉCAP VIDÉO -->
+        <div class="section reveal" id="recap-video-03">
+          <div class="section-header">
+            <div class="s-icon">🎬</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Récap · 2 minutes</div>
+              <h2>Tout ton matériel en une vidéo</h2>
+            </div>
+          </div>
+          <div class="prose">
+            <p>Avant de passer à la suite, revois tout ton kit en situation : les 7 éléments essentiels, du manomètre à la balance, plus le détecteur de micro-fuites en bonus. <strong>Deux minutes, tout ton matériel.</strong></p>
+          </div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="recap-03-pov-poster.jpg">
+              <source src="recap-03-final.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="rv-fallback" href="recap-03-final.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+        </div>
+
+
 
       </section>
 
@@ -3063,13 +3132,6 @@ body {
             <h4>Par email</h4>
             <p>Pour les demandes plus longues, factures, ressources spécifiques. Réponse sous 24h en semaine.</p>
             <a href="mailto:autobizzacademy@gmail.com" class="contact-link">Envoyer un email →</a>
-          </div>
-
-          <div class="contact-card">
-            <div class="contact-icon">📝</div>
-            <h4>Demande d'infos</h4>
-            <p>Laisse ton prénom, ton numéro et ta ville. On te recontacte sous 24h avec les infos et la marche à suivre.</p>
-            <a href="#" onclick="autobizLead();return false;" class="contact-link">Ouvrir le formulaire →</a>
           </div>
         </div>
 
@@ -3720,8 +3782,6 @@ applyProgressOnLoad();
   }, true);
 })();
 </script>
-<script src="lead.js"></script>
-
 <!-- ===== Marquage membre (ajoute par la mise en securite) ===== -->
 <style>
 #abz-badge{position:fixed;left:14px;bottom:14px;z-index:99998;display:none;
