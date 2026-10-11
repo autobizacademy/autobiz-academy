@@ -665,6 +665,8 @@ body {
   cursor: not-allowed;
 }
 .res-action.placeholder:hover { background: var(--cream2); color: var(--muted2); }
+.res-link { display: block; margin-top: 12px; text-align: center; font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
+.res-link:hover { text-decoration: underline; }
 
 /* FORMULAIRE FLYERS */
 .flyer-form {
@@ -795,16 +797,25 @@ body {
 }
 .part-meta { padding: 14px 16px; }
 /* ── Récap vidéo chapitre 02 ── */
-.ch2-wrap .rv-frame, #recap-video-03 .rv-frame, #recap-video-06 .rv-frame {
+.ch2-wrap .rv-frame, #recap-video-03 .rv-frame, #recap-video-06 .rv-frame, #recap-video-07 .rv-frame, #video-face-client .rv-frame, #video-sos-terrain .rv-frame, #video-face-aux-pros .rv-frame, #video-guide-tuto .rv-frame {
   position: relative; max-width: 320px; margin: 22px auto 0;
   aspect-ratio: 9 / 16; background: #000; border-radius: 10px; overflow: hidden;
   border: 1px solid var(--or-border); box-shadow: 0 16px 44px rgba(26,26,23,0.22);
 }
-.ch2-wrap .rv-frame video, #recap-video-03 .rv-frame video, #recap-video-06 .rv-frame video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
-.ch2-wrap .rv-fallback, #recap-video-03 .rv-fallback, #recap-video-06 .rv-fallback {
+.ch2-wrap .rv-frame video, #recap-video-03 .rv-frame video, #recap-video-06 .rv-frame video, #recap-video-07 .rv-frame video, #video-face-client .rv-frame video, #video-sos-terrain .rv-frame video, #video-face-aux-pros .rv-frame video, #video-guide-tuto .rv-frame video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.ch2-wrap .rv-fallback, #recap-video-03 .rv-fallback, #recap-video-06 .rv-fallback, #recap-video-07 .rv-fallback, #video-face-client .rv-fallback, #video-sos-terrain .rv-fallback, #video-face-aux-pros .rv-fallback, #video-guide-tuto .rv-fallback {
   display: block; text-align: center; font-size: 12px; color: var(--texte3);
   margin-top: 12px; text-decoration: none;
 }
+/* ── En-têtes des blocs vidéo (hors chapitre 02) : même style que le chapitre 02 ── */
+#recap-video-03 .section-header, #recap-video-06 .section-header, #recap-video-07 .section-header, #video-face-client .section-header, #video-sos-terrain .section-header, #video-face-aux-pros .section-header, #video-guide-tuto .section-header { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 18px; }
+#recap-video-03 .s-icon, #recap-video-06 .s-icon, #recap-video-07 .s-icon, #video-face-client .s-icon, #video-sos-terrain .s-icon, #video-face-aux-pros .s-icon, #video-guide-tuto .s-icon {
+  font-size: 24px; width: 50px; height: 50px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+#recap-video-03 .s-title .s-eyebrow, #recap-video-06 .s-title .s-eyebrow, #recap-video-07 .s-title .s-eyebrow, #video-face-client .s-title .s-eyebrow, #video-sos-terrain .s-title .s-eyebrow, #video-face-aux-pros .s-title .s-eyebrow, #video-guide-tuto .s-title .s-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--or); margin-bottom: 3px; }
+#recap-video-03 .s-title h2, #recap-video-06 .s-title h2, #recap-video-07 .s-title h2, #video-face-client .s-title h2, #video-sos-terrain .s-title h2, #video-face-aux-pros .s-title h2, #video-guide-tuto .s-title h2 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--texte); line-height: 1.2; margin: 0; }
+#recap-video-03 .prose p, #recap-video-06 .prose p, #recap-video-07 .prose p, #video-face-client .prose p, #video-sos-terrain .prose p, #video-face-aux-pros .prose p, #video-guide-tuto .prose p { color: var(--texte2); font-size: 16px; line-height: 1.8; }
+#recap-video-03 .prose strong, #recap-video-06 .prose strong, #recap-video-07 .prose strong, #video-face-client .prose strong, #video-sos-terrain .prose strong, #video-face-aux-pros .prose strong, #video-guide-tuto .prose strong { color: var(--texte); font-weight: 600; }
 .ch2-wrap .rv-fallback:hover { color: var(--or); text-decoration: underline; }
 .part-name {
   font-family: 'Playfair Display', serif;
@@ -1502,6 +1513,107 @@ body {
 .part-img.has-img::before { display: none; }
 .part-img.has-img img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in; }
 .res-action.placeholder[disabled] { opacity: .55; cursor: default; }
+/* ── Vidéos express (motion design) : annexes + sections du chapitre 02 ── */
+.vx { display: flex; gap: 26px; align-items: center; margin: 36px 0; padding: 20px 24px 20px 20px; background: #fff; border: 1px solid var(--or-border); border-radius: 14px; box-shadow: 0 10px 30px rgba(26,26,23,0.07); }
+.vx .vx-frame { flex: 0 0 196px; width: 196px; aspect-ratio: 9 / 16; margin: 0; padding: 0; border-radius: 10px; overflow: hidden; background: #000; box-shadow: 0 10px 26px rgba(26,26,23,0.25); }
+.vx .vx-frame video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.vx .vx-txt { flex: 1; min-width: 0; margin: 0; padding: 0; }
+.vx .vx-eye { display: flex; align-items: center; gap: 9px; margin: 0 0 10px; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--or); }
+.vx .vx-eye::before { content: '▶'; display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding-left: 2px; box-sizing: border-box; border-radius: 50%; background: var(--ink); color: var(--gold); font-size: 9px; letter-spacing: 0; flex-shrink: 0; }
+.vx .vx-title { margin: 0 0 10px; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; line-height: 1.25; color: var(--ink); }
+.vx .vx-desc { margin: 0 0 14px; font-size: 14.5px; line-height: 1.75; color: var(--ink2); }
+.vx .vx-desc strong { color: var(--ink); font-weight: 600; }
+.vx .vx-steps { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; padding: 0; list-style: none; }
+.vx .vx-steps li { margin: 0; padding: 4px 11px; font-size: 11.5px; font-weight: 600; line-height: 1.5; color: var(--or); background: var(--or-bg); border: 1px solid var(--or-border); border-radius: 20px; }
+.vx .vx-steps li.q { color: var(--gold); background: var(--ink); border-color: var(--ink); }
+.vx .vx-open { display: inline-block; font-size: 12px; line-height: 1.5; color: var(--muted); text-decoration: none; }
+.vx .vx-open:hover { color: var(--or); text-decoration: underline; }
+.vx.vx-in { margin: 4px 0 22px; background: var(--or-bg); box-shadow: none; }
+.vx.vx-faq { margin: 16px 0 0; padding: 14px 16px 14px 14px; gap: 18px; background: var(--or-bg); box-shadow: none; }
+.vx.vx-faq .vx-frame { flex-basis: 150px; width: 150px; }
+.vx.vx-faq .vx-title { font-size: 17px; margin-bottom: 6px; }
+.vx.vx-faq .vx-desc { font-size: 13.5px; margin-bottom: 10px; }
+.res-grid > .vx { grid-column: 1 / -1; margin: 0; }
+@media (max-width: 640px) {
+  .vx, .vx.vx-faq { flex-direction: column; align-items: stretch; gap: 16px; padding: 16px; }
+  .vx .vx-frame, .vx.vx-faq .vx-frame { flex: none; width: 100%; max-width: 280px; margin: 0 auto; }
+  .vx .vx-title { font-size: 20px; }
+}
+</style>
+<style id="vt-css">
+/* ── VIDÉOTHÈQUE (accès rapide à toutes les vidéos) ── */
+.sb-nav-title.sb-nav-quick { margin-top: 18px; }
+.sb-vt-count { margin-left: auto; min-width: 24px; padding: 0 7px; border-radius: 20px; background: rgba(201,168,76,0.14); color: var(--gold); font-size: 11px; font-weight: 600; line-height: 20px; text-align: center; }
+.sb-item.active .sb-vt-count { background: var(--gold); color: var(--black); }
+
+#ch-videotheque .chapter-intro { margin-bottom: 28px; }
+.vt-meter { display: flex; align-items: center; gap: 18px; margin: 0 0 30px; padding: 14px 20px; background: #fff; border: 1px solid var(--or-border); border-radius: 14px; }
+.vt-meter-txt { font-size: 13px; color: var(--ink2); white-space: nowrap; }
+.vt-meter-txt strong { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--ink); }
+.vt-meter-bar { flex: 1; height: 6px; background: var(--cream2); border-radius: 6px; overflow: hidden; }
+.vt-meter-bar i { display: block; width: 0; height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--gold), var(--gold2)); transition: width .5s ease; }
+
+.vt-quick { padding: 22px 22px 16px; background: var(--ink); border-radius: 16px; }
+.vt-quick-title { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: var(--white); line-height: 1.25; }
+.vt-quick-sub { margin: 3px 0 16px; font-size: 13px; color: var(--muted); }
+.vt-row { display: grid; grid-auto-flow: column; grid-auto-columns: 132px; gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: rgba(201,168,76,.4) transparent; }
+.vt-row .vt-card { scroll-snap-align: start; }
+.vt-quick .vt-eye { color: var(--gold); }
+.vt-quick .vt-title { color: var(--white); font-size: 13px; }
+
+.vt-h { display: flex; align-items: baseline; gap: 12px; margin: 42px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border-light); }
+.vt-h-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; color: var(--gold); }
+.vt-h-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+.vt-h-go { margin-left: auto; padding: 0; border: 0; background: none; font: inherit; font-size: 12px; font-weight: 600; color: var(--or); cursor: pointer; white-space: nowrap; }
+.vt-h-go:hover { text-decoration: underline; }
+
+.vt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(146px, 1fr)); gap: 20px 16px; }
+.vt-card { display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; align-self: start; width: 100%; margin: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.vt-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 10px; }
+.vt-thumb { position: relative; aspect-ratio: 9 / 16; border-radius: 10px; overflow: hidden; background: var(--black); box-shadow: 0 8px 22px rgba(26,26,23,0.18); }
+.vt-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease, opacity .2s; }
+.vt-card:hover .vt-thumb img { transform: scale(1.04); }
+.vt-play { position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; padding-left: 3px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(10,10,8,0.74); border: 1px solid rgba(201,168,76,0.65); color: var(--gold); font-size: 15px; opacity: 0; transition: opacity .2s; }
+.vt-card:hover .vt-play, .vt-card:focus-visible .vt-play { opacity: 1; }
+.vt-dur { position: absolute; right: 7px; bottom: 7px; padding: 2px 7px; border-radius: 6px; background: rgba(10,10,8,0.8); color: var(--white); font-size: 11px; font-weight: 600; line-height: 1.5; }
+.vt-seen { position: absolute; left: 7px; top: 7px; display: none; padding: 2px 8px; border-radius: 20px; background: var(--gold); color: var(--black); font-size: 10.5px; font-weight: 700; line-height: 1.5; letter-spacing: .03em; }
+.vt-card.is-seen .vt-seen { display: inline-block; }
+.vt-card.is-seen .vt-thumb img { opacity: .7; }
+.vt-eye { margin: 10px 0 3px; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--or); }
+.vt-title { font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.vt-foot { margin-top: 40px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+
+.vt-modal { position: fixed; inset: 0; z-index: 100000; display: flex; align-items: center; justify-content: center; padding: 20px 16px; background: rgba(5,5,4,0.9); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.vt-modal[hidden] { display: none; }
+.vt-box { display: flex; flex-direction: column; align-items: center; gap: 14px; max-width: 100%; }
+.vt-player { width: min(calc(100vw - 32px), calc(72vh * 9 / 16)); aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
+.vt-player video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.vt-info { max-width: 460px; text-align: center; }
+.vt-info .vt-eye { margin: 0 0 4px; color: var(--gold); }
+.vt-info-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; line-height: 1.3; color: var(--white); }
+.vt-goto { margin-top: 12px; padding: 9px 18px; border: 1px solid rgba(201,168,76,0.55); border-radius: 30px; background: none; color: var(--gold); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+.vt-goto:hover { background: var(--gold); color: var(--black); }
+.vt-close { position: fixed; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(201,168,76,0.5); background: rgba(10,10,8,0.7); color: var(--white); font-size: 18px; line-height: 1; cursor: pointer; }
+.vt-close:hover { border-color: var(--gold); color: var(--gold); }
+.vt-flash { animation: vtFlash 1.8s ease; border-radius: 14px; }
+@keyframes vtFlash { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); } 25%, 60% { box-shadow: 0 0 0 4px rgba(201,168,76,0.55); } }
+
+@media (max-width: 640px) {
+  .vt-meter { flex-direction: column; align-items: stretch; gap: 10px; }
+  .vt-quick { padding: 18px 16px 12px; margin: 0 -4px; }
+  .vt-row { grid-auto-columns: 118px; gap: 12px; }
+  .vt-h { margin-top: 34px; flex-wrap: wrap; }
+  .vt-grid { grid-template-columns: 1fr; gap: 10px; }
+  .vt-grid .vt-card { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: center; padding: 8px; background: #fff; border: 1px solid var(--border-light); border-radius: 12px; }
+  .vt-grid .vt-thumb { border-radius: 8px; box-shadow: none; }
+  .vt-grid .vt-play { display: none; }
+  .vt-grid .vt-dur { right: 4px; bottom: 4px; padding: 1px 5px; font-size: 9.5px; }
+  .vt-grid .vt-seen { left: 4px; top: 4px; padding: 0 5px; font-size: 9px; }
+  .vt-grid .vt-eye { margin-top: 0; }
+  .vt-grid .vt-title { font-size: 14.5px; }
+  .vt-player { width: min(calc(100vw - 32px), calc(66vh * 9 / 16)); }
+}
+@media (prefers-reduced-motion: reduce) { .vt-thumb img, .vt-meter-bar i { transition: none; } .vt-flash { animation: none; } }
 </style>
 <body>
 
@@ -1580,6 +1692,14 @@ body {
         <span class="sb-item-icon">◎</span>
         <span>FAQ & Contact</span>
         <span class="sb-item-check">✓</span>
+      </div>
+
+      <div class="sb-nav-title sb-nav-quick">Accès rapide</div>
+      <div class="sb-item sb-item-vt" onclick="goTo('videotheque')">
+        <span class="sb-item-num"></span>
+        <span class="sb-item-icon">▶</span>
+        <span>Toutes les vidéos</span>
+        <span class="sb-vt-count" id="sb-vt-count"></span>
       </div>
     </div>
 
@@ -1661,6 +1781,11 @@ body {
         <div class="strat-callout" style="margin-top:32px">
           <div class="strat-callout-title">💡 Pour tes premières prestations</div>
           <p>Tu as accès à un <strong>guide interactif terrain</strong> dans tes ressources. Il te guide pas à pas selon ce que tu vois sur le manomètre — parfait pour les premières clims quand tu veux être sûr de chaque décision. <a href="#" onclick="goTo('ressources');return false;" style="color:var(--gold);font-weight:600;text-decoration:none">Accéder au guide →</a></p>
+        </div>
+
+        <div class="strat-callout">
+          <div class="strat-callout-title">▶ Toutes les vidéos au même endroit</div>
+          <p>Chaque vidéo est rangée dans son chapitre, au moment où tu en as besoin. Pour en retrouver une vite, même sur le terrain, ouvre la <strong>vidéothèque</strong> : menu, <em>Accès rapide</em>. <a href="#" onclick="goTo('videotheque');return false;" style="color:var(--gold);font-weight:600;text-decoration:none">Voir toutes les vidéos →</a></p>
         </div>
 
         <h2 class="section-h2">Ce business, c'est aussi un tremplin</h2>
@@ -1764,6 +1889,17 @@ body {
 
         <h2 class="section-h2" style="margin-top:60px">Les pièces à reconnaître</h2>
         <p class="section-p">Avant de te lancer, tu dois savoir nommer chaque pièce du circuit. Le client te jugera sur ton vocabulaire.</p>
+        <!-- VIDÉO EXPRESS · Annexe 05 -->
+        <div class="vx" id="vx-annexe-05-circuit">
+          <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-05-circuit-poster.jpg"><source src="annexe-05-circuit.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+          <div class="vx-txt">
+            <div class="vx-eye">Annexe 05 · En vidéo · 43 s</div>
+            <div class="vx-title">Comprendre le circuit</div>
+            <p class="vx-desc">Compresseur, condenseur, détendeur, évaporateur : le trajet du gaz, et où se placent tes deux valves. <strong>Le client qui sent que tu sais de quoi tu parles ne discute pas le prix.</strong></p>
+            <ul class="vx-steps"><li>Compresseur</li><li>Condenseur</li><li>Détendeur</li><li>Valves HP / BP</li></ul>
+            <a class="vx-open" href="annexe-05-circuit.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+          </div>
+        </div>
         <div class="parts-grid">
           <div class="part-card">
             <div class="part-img" data-src-alt="Compresseur de climatisation">Compresseur</div>
@@ -1794,6 +1930,27 @@ body {
             </div>
           </div>
         </div>
+
+        <!-- ENTRAÎNEMENT VIDÉO -->
+        <div class="section reveal" id="video-sos-terrain" style="margin-top:60px">
+          <div class="section-header">
+            <div class="s-icon">📞</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Entraînement · 3 min</div>
+              <h2>SOS terrain : les 5 appels qu'on reçoit le plus</h2>
+            </div>
+          </div>
+          <div class="prose">
+            <p>Quel gaz mettre, compresseur qui ne part pas, recharge par paliers, compresseur qui se coupe en pleine charge : les situations qui bloquent vraiment sur le terrain, et <strong>le réflexe qui règle chacune</strong>. À revoir juste avant ta première journée.</p>
+          </div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="sos-terrain-poster.jpg">
+              <source src="sos-terrain.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="rv-fallback" href="sos-terrain.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+        </div>
       </section>
 
       <!-- ──────── 03. STRATÉGIE COMMERCIALE ──────── -->
@@ -1802,6 +1959,18 @@ body {
         <h1 class="chapter-title">Comment <em>générer ton chiffre</em>.</h1>
         <p class="chapter-intro">L'affichage aux feux rouges combiné à quelques garages et parcs automobiles signés — ça m'a suffi pour réaliser 40 000 € de CA en 4 mois. En ajoutant les leviers ci-dessous, tu auras de quoi être débordé tout l'été.</p>
         <p class="chapter-intro">En période de canicule, tout le monde veut recharger sa clim en même temps — c'est là que tu fais tes meilleures journées. À toi de réfléchir à comment t'organiser. Tu peux mettre en place un point fixe sur un terrain disponible où les clients viennent à toi, tout en proposant du déplacement à domicile. Si vous êtes deux, c'est encore plus efficace — une personne sur place, une autre en déplacement. Vous doublez votre capacité sans doubler vos efforts. D'où l'intérêt de bien gérer tes rendez-vous — bloquer des créneaux, éviter les trajets inutiles entre deux clients, et regrouper les déplacements par zone. Une journée bien organisée, c'est deux fois plus de clients pour le même temps passé.</p>
+
+        <!-- VIDÉO EXPRESS · Annexe 04 -->
+        <div class="vx" id="vx-annexe-04-organisation">
+          <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-04-organisation-poster.jpg"><source src="annexe-04-organisation.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+          <div class="vx-txt">
+            <div class="vx-eye">Annexe 04 · En vidéo · 45 s</div>
+            <div class="vx-title">Organise ta saison</div>
+            <p class="vx-desc">Tes canaux avant la chaleur, un numéro dédié, le point fixe et le déplacement, des trajets regroupés par zone. <strong>Une journée organisée, c'est deux fois plus de clients.</strong></p>
+            <ul class="vx-steps"><li>Avant la chaleur</li><li>Numéro dédié</li><li>Point fixe + domicile</li><li>Par zone</li></ul>
+            <a class="vx-open" href="annexe-04-organisation.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+          </div>
+        </div>
 
         <div class="strat-callout">
           <div class="strat-callout-title">Mindset</div>
@@ -1876,6 +2045,18 @@ body {
           </ul>
         </div>
 
+        <!-- VIDÉO EXPRESS · Annexe 10 -->
+        <div class="vx" id="vx-annexe-10-etre-trouve">
+          <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-10-etre-trouve-poster.jpg"><source src="annexe-10-etre-trouve.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+          <div class="vx-txt">
+            <div class="vx-eye">Annexe 10 · En vidéo · 42 s</div>
+            <div class="vx-title">Être trouvé près de chez toi</div>
+            <p class="vx-desc">Ta fiche Google, tes avis, les groupes Facebook : les trois endroits où ton client cherche quand il a chaud. <strong>Et le réflexe qui te fait passer premier.</strong></p>
+            <ul class="vx-steps"><li>1 · Google</li><li>2 · Les avis</li><li>3 · Facebook</li><li class="q">À toi</li></ul>
+            <a class="vx-open" href="annexe-10-etre-trouve.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+          </div>
+        </div>
+
         <div class="strat-tactic">
           <div class="strat-tactic-num">06</div>
           <div class="strat-tactic-tag">Digital · Annonces</div>
@@ -1910,6 +2091,27 @@ body {
             </video>
           </div>
           <a class="rv-fallback" href="recap-06-pov.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+        </div>
+
+        <!-- ENTRAÎNEMENT VIDÉO -->
+        <div class="section reveal" id="video-face-aux-pros" style="margin-top:60px">
+          <div class="section-header">
+            <div class="s-icon">🤝</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Entraînement · 2 min</div>
+              <h2>Face aux pros : garage, parc auto, flotte</h2>
+            </div>
+          </div>
+          <div class="prose">
+            <p>Trois portes, trois pitchs : ce qui fait dire oui à un garagiste, à un vendeur d'occasion et à une gérante de flotte. Ton pitch tient en une phrase — <strong>« je fais ça pour vous, vous gardez la main sur le client »</strong>. Et sans statut, la porte des flottes reste fermée.</p>
+          </div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="face-aux-pros-poster.jpg">
+              <source src="face-aux-pros.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="rv-fallback" href="face-aux-pros.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
         </div>
       </section>
 
@@ -2019,6 +2221,18 @@ body {
     <div class="callout bleu">
       <div class="callout-lbl">📁 Ressource incluse</div>
       <p>Dans l'onglet <strong>Ressources</strong>, tu trouveras les deux fichiers de grammages (1 000+ véhicules) — pour savoir exactement quel gaz et quelle quantité injecter selon le modèle.</p>
+    </div>
+
+    <!-- VIDÉO EXPRESS · Section 01 -->
+    <div class="vx" id="vx-ch02-s01-les-deux-gaz" hidden><!-- en attente du fichier ch02-s01-les-deux-gaz.mp4 -->
+      <div class="vx-frame"><video controls preload="none" playsinline poster="ch02-s01-les-deux-gaz-poster.jpg"><source src="ch02-s01-les-deux-gaz.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+      <div class="vx-txt">
+        <div class="vx-eye">Section 01 · En vidéo · 53 s</div>
+        <div class="vx-title">Les deux gaz, en trois étapes</div>
+        <p class="vx-desc">L'ancien, le récent, et comment savoir lequel est dans la voiture : l'année donne une piste, <strong>le fichier donne la réponse</strong>. Une question à la fin pour vérifier ton réflexe.</p>
+        <ul class="vx-steps"><li>1 · Le R134a</li><li>2 · Le R1234yf</li><li>3 · Lequel ?</li><li class="q">À toi</li></ul>
+        <a class="vx-open" href="ch02-s01-les-deux-gaz.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+      </div>
     </div>
   </div>
 
@@ -2354,6 +2568,18 @@ body {
       <div class="callout-lbl">💡 Cause numéro 1 d'un circuit complètement vide</div>
       <p>Si une pièce du circuit a été changée récemment, le garage a réparé mais <strong>n'a pas rechargé</strong>. C'est la raison la plus fréquente d'un circuit à zéro chez un client qui « vient juste de faire entretenir sa voiture ».</p>
     </div>
+
+    <!-- VIDÉO EXPRESS · Section 05 -->
+    <div class="vx" id="vx-ch02-s05-circuit-ferme" hidden><!-- en attente du fichier ch02-s05-circuit-ferme.mp4 -->
+      <div class="vx-frame"><video controls preload="none" playsinline poster="ch02-s05-circuit-ferme-poster.jpg"><source src="ch02-s05-circuit-ferme.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+      <div class="vx-txt">
+        <div class="vx-eye">Section 05 · En vidéo · 43 s</div>
+        <div class="vx-title">Le circuit fermé : pourquoi il manque du gaz</div>
+        <p class="vx-desc">Le gaz ne se consomme pas, il tourne en boucle. Les trois profils de clients que tu vas croiser — et celui qui revient chaque été. <strong>Pas l'usage : l'étanchéité.</strong></p>
+        <ul class="vx-steps"><li>1 · 10 ans +</li><li>2 · ≈ 5 ans</li><li>3 · 1 an</li><li class="q">À toi</li></ul>
+        <a class="vx-open" href="ch02-s05-circuit-ferme.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+      </div>
+    </div>
   </div>
 
   <div class="divider"></div>
@@ -2404,6 +2630,18 @@ body {
           <span class="rxs-n">3</span>
           <div><strong>Il revient chez toi pour la recharge</strong><em>Une fois la pièce changée, c'est toi qui remplis. Deuxième passage, deuxième encaissement.</em></div>
         </div>
+      </div>
+    </div>
+
+    <!-- VIDÉO EXPRESS · Section 06 -->
+    <div class="vx" id="vx-ch02-s06-diagnostiquer" hidden><!-- en attente du fichier ch02-s06-diagnostiquer.mp4 -->
+      <div class="vx-frame"><video controls preload="none" playsinline poster="ch02-s06-diagnostiquer-poster.jpg"><source src="ch02-s06-diagnostiquer.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+      <div class="vx-txt">
+        <div class="vx-eye">Section 06 · En vidéo · 46 s</div>
+        <div class="vx-title">L'aiguille ne bouge pas : les trois vérifs</div>
+        <p class="vx-desc">Trop de gaz, la fiche du capteur, le compresseur : <strong>toujours dans cet ordre</strong>. Puis ton rôle : tu factures le diagnostic, tu donnes un garage partenaire, et tu recharges après.</p>
+        <ul class="vx-steps"><li>1 · Trop de gaz ?</li><li>2 · Le capteur</li><li>3 · Compresseur</li><li class="q">À toi</li></ul>
+        <a class="vx-open" href="ch02-s06-diagnostiquer.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
       </div>
     </div>
 
@@ -2755,11 +2993,24 @@ body {
             <a class="res-action" href="grammages-r1234yf.pdf" download="Grammages-R1234yf-AutoBiz.pdf">⬇ Télécharger le PDF</a>
           </div>
 
+          <!-- VIDÉO EXPRESS · Annexe 06 -->
+          <div class="vx" id="vx-annexe-06-air-pas-assez-froid">
+            <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-06-air-pas-assez-froid-poster.jpg"><source src="annexe-06-air-pas-assez-froid.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+            <div class="vx-txt">
+              <div class="vx-eye">Annexe 06 · En vidéo · 37 s</div>
+              <div class="vx-title">Air pas assez froid ?</div>
+              <p class="vx-desc">La recharge est finie mais l'air reste tiède : les trois vérifs, dans l'ordre. Et pourquoi tu ne dépasses jamais le grammage.</p>
+              <ul class="vx-steps"><li>1 · Compresseur</li><li>2 · Grammage</li><li>3 · Fuite</li></ul>
+              <a class="vx-open" href="annexe-06-air-pas-assez-froid.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+            </div>
+          </div>
+
           <div class="res-card">
             <div class="res-icon">🗺</div>
             <div class="res-title">Guide terrain interactif</div>
             <div class="res-desc">Diagnostic pas à pas — réponds aux questions selon ce que tu vois sur le manomètre. Le guide t'indique exactement quoi faire dans chaque cas.</div>
             <a class="res-action" href="organigramme-clim.html" target="_blank">Ouvrir le guide →</a>
+            <a class="res-link" href="#video-guide-tuto" onclick="document.getElementById('video-guide-tuto').scrollIntoView({behavior:'smooth',block:'start'});return false;">▶ Mode d'emploi en vidéo · 47 s</a>
           </div>
 
           <div class="res-card">
@@ -2778,12 +3029,24 @@ body {
 
           <div class="res-card" style="grid-column: 1 / -1;">
             <div class="res-icon">🤝</div>
-            <div class="res-title">Où trouver ton gaz — Fournisseurs directs</div>
-            <div class="res-desc" style="margin-bottom:20px">Oublie les revendeurs en ligne — tu paies 2x le prix. Voici des contacts directs pour t'approvisionner rapidement.</div>
+            <div class="res-title">Où trouver ton gaz — Contacts par région</div>
+            <div class="res-desc" style="margin-bottom:20px">Compare toujours plusieurs vendeurs : pour la même bouteille, l'écart peut dépasser 100 €. Voici des contacts pour t'approvisionner rapidement.</div>
 
             <div style="margin-bottom:16px">
               <p style="font-size:13px;color:var(--gold);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">💡 Le prix à ne pas dépasser</p>
               <p style="font-size:14px;color:var(--ink);line-height:1.7">R134a 12 kg : entre <strong>300 et 400 €</strong>. Au-dessus, négocie. Dès 5 bouteilles : demande systématiquement un prix dégressif.</p>
+            </div>
+
+            <!-- VIDÉO EXPRESS · Annexe 02 -->
+            <div class="vx vx-in" id="vx-annexe-02-gaz">
+              <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-02-gaz-poster.jpg"><source src="annexe-02-gaz.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+              <div class="vx-txt">
+                <div class="vx-eye">Annexe 02 · En vidéo · 38 s</div>
+                <div class="vx-title">Acheter ton gaz malin</div>
+                <p class="vx-desc">Comparer les vendeurs, ton prix repère, le dégressif, le stock d'hiver et la balance. <strong>Tu achètes en hiver, tu encaisses en été.</strong></p>
+                <ul class="vx-steps"><li>Compare</li><li>300–400 €</li><li>Stock d'hiver</li><li>La balance</li></ul>
+                <a class="vx-open" href="annexe-02-gaz.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+              </div>
             </div>
 
             <p style="font-size:13px;color:var(--gold);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px">📍 Île-de-France — R134a</p>
@@ -2842,6 +3105,27 @@ body {
               <p style="font-size:13px;color:#1a1a17;line-height:1.7;margin:0">💡 <strong>Conseil stock :</strong> Pour préparer la saison suivante, fais ton stock en hiver. La demande est quasi nulle — les prix peuvent descendre jusqu'à <strong>250 € la bonbonne</strong>. C'est le meilleur moment pour acheter.</p>
             </div>
           </div>
+        </div>
+
+        <!-- MODE D'EMPLOI VIDÉO DU GUIDE -->
+        <div class="section reveal" id="video-guide-tuto" style="margin-top:60px;scroll-margin-top:80px">
+          <div class="section-header">
+            <div class="s-icon">🗺</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Mode d'emploi · 47 s</div>
+              <h2>Le guide interactif : comment t'en servir</h2>
+            </div>
+          </div>
+          <div class="prose">
+            <p>Ouvre-le sur ton téléphone, devant la voiture. Il te pose des questions sur <strong>ce que tu vois au manomètre</strong> et t'envoie vers la bonne suite, étape par étape. Garde-le ouvert pendant tes premières prestations.</p>
+          </div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="guide-interactif-tuto-poster.jpg">
+              <source src="guide-interactif-tuto.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="rv-fallback" href="guide-interactif-tuto.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
         </div>
 
       </section>
@@ -2919,6 +3203,18 @@ body {
           </div>
         </div>
 
+        <!-- VIDÉO EXPRESS · Annexe 01 -->
+        <div class="vx" id="vx-annexe-01-valves">
+          <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-01-valves-poster.jpg"><source src="annexe-01-valves.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+          <div class="vx-txt">
+            <div class="vx-eye">Annexe 01 · En vidéo · 51 s</div>
+            <div class="vx-title">Trouver les valves, sur tous les véhicules</div>
+            <p class="vx-desc">BMW, Opel, Mercedes, Kangoo : où se cachent les valves, quand sortir les embouts coudés, et quoi faire quand il n'y a qu'une seule valve. <strong>Tu cherches avant de brancher.</strong></p>
+            <ul class="vx-steps"><li>80 % à la main</li><li>Une vis à retirer</li><li>Embouts coudés</li><li>Une seule valve</li></ul>
+            <a class="vx-open" href="annexe-01-valves.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+          </div>
+        </div>
+
         <!-- ── SECTION 2 : EMBOUTS R1234yf ── -->
         <div style="margin-top:36px">
           <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
@@ -2986,6 +3282,18 @@ body {
             <div style="padding:14px 24px;background:var(--cream2);font-size:12px;color:var(--muted2)">
               💡 <strong style="color:var(--ink2)">Conseil terrain :</strong> un manomètre basique suffit largement. Pas besoin d'un modèle numérique à 200€. Ce que tu surveilles c'est le mouvement de l'aiguille — pas une valeur exacte à 0,1 bar près.
             </div>
+          </div>
+        </div>
+
+        <!-- VIDÉO EXPRESS · Annexe 08 -->
+        <div class="vx" id="vx-annexe-08-manometre">
+          <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-08-manometre-poster.jpg"><source src="annexe-08-manometre.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+          <div class="vx-txt">
+            <div class="vx-eye">Annexe 08 · En vidéo · 42 s</div>
+            <div class="vx-title">Lire ton manomètre</div>
+            <p class="vx-desc">Ton manomètre affiche une pression, pas une quantité : <strong>tu lis un mouvement</strong>. Les trois cas, et la décision qui va avec chacun.</p>
+            <ul class="vx-steps"><li>1 · Au plancher</li><li>2 · Elle descend</li><li>3 · Le yoyo</li><li class="q">À toi</li></ul>
+            <a class="vx-open" href="annexe-08-manometre.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
           </div>
         </div>
 
@@ -3138,12 +3446,33 @@ body {
         <h2 class="section-h2">Avant de nous écrire — vérifie d'abord</h2>
         <p class="section-p">La plupart des questions trouvent leur réponse directement dans la formation. Avant de nous contacter, prends 30 secondes pour vérifier :</p>
         <ul class="strat-checklist" style="border:none;padding:0;margin-top:12px">
-          <li>Les vidéos — chapitre <a href="#" onclick="goTo('videos');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Vidéos</a></li>
+          <li>Les vidéos — toutes rangées dans la <a href="#" onclick="goTo('videotheque');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">vidéothèque</a></li>
           <li>Le guide interactif — il est conçu pour répondre à toutes les situations terrain, cas par cas. Tu y trouveras quoi faire selon ce que tu vois sur le manomètre — <a href="organigramme-clim.html" target="_blank" style="color:var(--gold);text-decoration:none;font-weight:600">Ouvrir le guide →</a></li>
           <li>Le jargon si tu butes sur un terme — chapitre <a href="#" onclick="goTo('jargon');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Jargon & Fonctionnement</a></li>
           <li>Le fichier grammages pour les quantités — chapitre <a href="#" onclick="goTo('ressources');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Ressources</a></li>
         </ul>
 
+
+        <!-- ENTRAÎNEMENT VIDÉO -->
+        <div class="section reveal" id="video-face-client" style="margin-top:60px">
+          <div class="section-header">
+            <div class="s-icon">🎭</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Entraînement · 2 min 11</div>
+              <h2>Face au client : les 5 phrases que tu vas entendre cet été</h2>
+            </div>
+          </div>
+          <div class="prose">
+            <p>Cinq clients, cinq objections, et la réponse qui te fait encaisser à chaque fois. Regarde-la une première fois, puis rejoue-la en essayant de répondre <strong>avant</strong> que la bulle dorée s'affiche. Et la règle qui passe avant tout le reste : <strong>ne loupe aucun appel</strong>.</p>
+          </div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="face-au-client-poster.jpg">
+              <source src="face-au-client.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+          <a class="rv-fallback" href="face-au-client.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+        </div>
 
         <h2 class="section-h2" style="margin-top:60px">La FAQ — les questions qui reviennent</h2>
         <p class="section-p">Les réponses aux situations que tu vas rencontrer en premier. Clique sur une question pour la dérouler.</p>
@@ -3178,6 +3507,16 @@ body {
             </div>
             <div class="accord-body">
               <p>Commence par le tuyau : la BP est sur le <strong>tuyau épais</strong>, avec la petite valve. La HP est sur le tuyau fin, avec la grosse valve.</p><p>Si tu ne trouves vraiment qu'une seule valve, c'est peut-être un véhicule sans BP — <strong>Kangoo, Scénic, Mégane</strong> selon les modèles. Dans ce cas et seulement dans ce cas, tu te branches sur la <strong>HP avec le raccord rouge</strong>.</p><p>Sur les accès étroits (BMW, Mercedes, certains SUV), les embouts droits ne passent pas — c'est là que les coudés à 90° servent. Voir le <a href="#" onclick="goTo('materiel');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Chapitre 03</a>.</p>
+              <!-- VIDÉO EXPRESS · Annexe 07 -->
+              <div class="vx vx-faq" id="vx-annexe-07-basse-ou-haute">
+                <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-07-basse-ou-haute-poster.jpg"><source src="annexe-07-basse-ou-haute.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+                <div class="vx-txt">
+                  <div class="vx-eye">Annexe 07 · En vidéo · 39 s</div>
+                  <div class="vx-title">Basse ou haute : les trois indices</div>
+                  <p class="vx-desc">Le tuyau, la valve, le raccord — dans cet ordre. Et une question pour vérifier.</p>
+                  <a class="vx-open" href="annexe-07-basse-ou-haute.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="accord-item">
@@ -3218,6 +3557,16 @@ body {
             </div>
             <div class="accord-body">
               <p>Ça dépend de la fuite, et c'est le client qui tranche — en connaissance de cause.</p><p><strong>Grosse fuite audible</strong> (sifflement, l'aiguille retombe immédiatement) : tu ne recharges pas, tu perdrais ton gaz. Diagnostic facturé, direction garage.</p><p><strong>Micro-fuite</strong> : les garages refusent souvent parce qu'ils engagent leur garantie. Toi tu peux, en étant honnête : « ça peut tenir l'été, peut-être un an, je ne vous garantis pas plus. » Beaucoup de clients paient 40 € pour passer l'été au frais sans hésiter. Tu ne promets jamais une garantie longue durée sur un circuit qui fuit.</p>
+              <!-- VIDÉO EXPRESS · Annexe 09 -->
+              <div class="vx vx-faq" id="vx-annexe-09-fuite">
+                <div class="vx-frame"><video controls preload="none" playsinline poster="annexe-09-fuite-poster.jpg"><source src="annexe-09-fuite.mp4" type="video/mp4">Ton navigateur ne supporte pas la vidéo HTML5.</video></div>
+                <div class="vx-txt">
+                  <div class="vx-eye">Annexe 09 · En vidéo · 45 s</div>
+                  <div class="vx-title">Grosse fuite ou micro-fuite ?</div>
+                  <p class="vx-desc">Trancher en trois étapes, annoncer la couleur, et laisser le client décider.</p>
+                  <a class="vx-open" href="annexe-09-fuite.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3251,7 +3600,8 @@ body {
               <span class="accord-chev">▶</span>
             </div>
             <div class="accord-body">
-              <p>Pas chez les revendeurs en ligne : tu paies le double. Tu as une liste de <strong>contacts directs par région</strong> dans tes <a href="#" onclick="goTo('ressources');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Ressources</a>, avec les prix pratiqués.</p><p>Le prix à ne pas dépasser pour une bouteille R134a de 12 kg : <strong>300 à 400 €</strong>. Au-dessus, tu négocies. Dès 5 bouteilles, demande systématiquement un tarif dégressif.</p><p>Astuce trésorerie : fais ton stock en hiver. La demande est quasi nulle et les prix peuvent descendre à 250 €.</p>
+              <p>Chez les fournisseurs pros, en présentant ton <strong>attestation de capacité</strong>. Pour le R1234yf, elle est obligatoire à partir du 1er janvier 2027.</p>
+              <p>Compare toujours plusieurs vendeurs : pour la même bouteille, l'écart peut dépasser 100 €. Tu as une liste de <strong>contacts par région</strong> dans tes <a href="#" onclick="goTo('ressources');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Ressources</a>, avec les prix pratiqués.</p><p>Le prix à ne pas dépasser pour une bouteille R134a de 12 kg : <strong>300 à 400 €</strong>. Au-dessus, tu négocies. Dès 5 bouteilles, demande systématiquement un tarif dégressif.</p><p>Astuce trésorerie : fais ton stock en hiver. La demande est quasi nulle et les prix peuvent descendre à 250 €.</p>
             </div>
           </div>
           <div class="accord-item">
@@ -3285,7 +3635,7 @@ body {
               <span class="accord-chev">▶</span>
             </div>
             <div class="accord-body">
-              <p>Non. Aucun diplôme n'est demandé pour t'installer en <strong>auto-entrepreneur « entretien et nettoyage automobile »</strong> — c'est le cadre qui correspond à cette activité, et il ne demande ni qualification ni attestation.</p><p>Tu n'es pas mécanicien et tu ne prétends pas l'être : tu es prestataire d'entretien automobile. La nuance change tout, et elle est expliquée en détail dans le <a href="#" onclick="goTo('juridique');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Chapitre 07</a>.</p>
+              <p>Pas besoin d'être mécanicien de métier, mais l'entretien de véhicules est une activité réglementée : pour t'immatriculer, la CMA demande un <strong>CAP, un BEP ou un titre pro</strong> du domaine, <strong>ou 3 ans d'expérience</strong>.</p><p>Et pour toucher au gaz, il te faut l'<strong>attestation d'aptitude catégorie V</strong> : une demi-journée d'évaluation, environ 400 €. Toutes les options sont dans le <a href="#" onclick="goTo('juridique');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Chapitre 07</a>.</p>
             </div>
           </div>
           <div class="accord-item">
@@ -3295,7 +3645,7 @@ body {
               <span class="accord-chev">▶</span>
             </div>
             <div class="accord-body">
-              <p>Auto-entrepreneur « entretien &amp; nettoyage automobile », inscription à la CMA. C'est gratuit, rapide, et tu travailles en règle avec une facturation propre dès la première prestation.</p><p>La voie complète — attestation d'aptitude fluides frigorigènes plus attestation de capacité entreprise — existe si tu veux aller plus loin : compte 300 à 500 € et environ 3 jours de formation. C'est une question à se poser quand tu scales, pas pour démarrer.</p><p>Le <a href="#" onclick="goTo('juridique');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Chapitre 07</a> compare les deux voies.</p>
+              <p>La <strong>micro-entreprise</strong> : gratuite, en ligne, faite pour une activité de saison. L'hiver tu déclares zéro, tu paies zéro cotisation.</p><p>Mais le statut te permet d'encaisser, pas de toucher au gaz : pour ça il te faut aussi les deux attestations, l'aptitude pour toi et la capacité pour ton entreprise. Coûts et calendrier dans le <a href="#" onclick="goTo('juridique');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Chapitre 07</a>.</p>
             </div>
           </div>
           <div class="accord-item">
@@ -3368,113 +3718,237 @@ body {
       <!-- ──────── 06. CADRE LÉGAL & STATUT ──────── -->
       <section class="chapter" id="ch-juridique">
         <div class="chapter-tag">Chapitre 07 · Cadre légal</div>
-        <h1 class="chapter-title">Ce qu'il faut savoir <em>avant de se lancer.</em></h1>
-        <p class="chapter-intro">On va pas te mentir : la recharge de clim est techniquement réglementée en France. Mais il y a une différence entre ce que dit la loi sur le papier et ce qui se passe concrètement sur le terrain. Ce chapitre te donne les 3 réalités à connaître pour travailler sereinement.</p>
+        <style>
+@media (max-width: 560px) {
+  #ch-juridique .accord-body { padding-left: 20px; }
+  #ch-juridique .accord-row { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+        <h1 class="chapter-title">Le cadre légal, <em>sans langue de bois.</em></h1>
+        <p class="chapter-intro">Sur le terrain, beaucoup bossent sans être 100 % en règle, surtout sur une saison de quatre mois. C'est possible, on ne va pas te le cacher. Mais ça reste un risque, et le 1er janvier 2027 change la donne. Si tu veux être en règle, c'est simple : ce chapitre te donne les étapes, les coûts et le calendrier.</p>
 
-        <div style="border-left:3px solid var(--gold);background:rgba(201,168,76,0.06);border-radius:4px;padding:20px 24px;margin-top:24px">
-          <div style="font-size:14px;font-weight:600;color:var(--gold);margin-bottom:8px">⚠️ Disclaimer important</div>
-          <p style="font-size:14px;color:#888880;line-height:1.8">Ce chapitre est une information générale, pas un conseil juridique officiel. Chaque situation est différente. À toi de choisir l'approche qui correspond à ton profil, ta situation et ton niveau de confort avec le risque.</p>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:28px 0 12px">La réalité du terrain</div>
+        <div class="accord-list">
+          <div class="accord-item open">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Je peux bosser sans être 100 % en règle ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p>Oui, c'est possible, et beaucoup le font : sur une saison de quatre mois, les contrôles en pleine prestation sont rares.</p>
+              <div class="accord-callout" style="margin:0 0 14px">Sur le terrain, un peu plus de la moitié se lance comme ça… puis se régularise après, en déclarant son entreprise.</div>
+              <p>Mais ça reste une infraction, donc un risque que tu prends. Et ce risque vient rarement d'un contrôle en pleine recharge : il vient d'une voiture qui tombe en panne après ton passage, d'un garage qui ne peut pas te payer sans facture, de tes encaissements qui ressortent un jour. Et à partir de 2027, le plus dur sera de trouver ton gaz : plus de R1234yf chez les fournisseurs sans attestation.</p><p>Si tu veux être en règle, c'est simple : trois papiers, et tout est dans la partie suivante.</p>
+            </div>
+          </div>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Je risque quoi, concrètement ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <div class="accord-table">
+                <div class="accord-row"><span>Sans aucun statut</span><span>Travail dissimulé : jusqu'à 45 000 € d'amende et 3 ans de prison, plus un redressement sur tout ce que tu as encaissé. C'est le plus risqué.</span></div>
+                <div class="accord-row"><span>Avec ton statut, sans attestations</span><span>Tu factures et tu déclares, mais tu manipules le gaz sans y être autorisé : infraction au code de l'environnement. Et en cas de pépin sur une voiture, ton assurance peut refuser de te couvrir.</span></div>
+                <div class="accord-row"><span>Sans assurance</span><span>Une voiture abîmée, c'est pour ta poche.</span></div>
+              </div>
+              <p>Et côté business : sans factures, pas de garages, pas de parcs auto, pas de flottes. Le vrai risque, ce n'est pas le contrôle : c'est de construire un business que tu ne peux montrer à personne.</p>
+            </div>
+          </div>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Qu'est-ce qui change le 1er janvier 2027 ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p>La réglementation européenne sur les gaz fluorés se durcit, et elle vise directement le <strong>R1234yf</strong>, le gaz de la quasi-totalité des voitures vendues depuis 2017.</p>
+              <div class="accord-table">
+                <div class="accord-row"><span>Travailler dessus</span><span>Attestation d'aptitude obligatoire pour le technicien</span></div>
+                <div class="accord-row"><span>L'acheter</span><span>L'entreprise présente son attestation de capacité</span></div>
+                <div class="accord-row"><span>Le suivre</span><span>Un registre à part pour ce gaz</span></div>
+              </div>
+              <p>Autrement dit : dès 2027, sans attestations, tu ne peux plus acheter le gaz des voitures récentes. Être en règle devient un vrai avantage face à ceux qui ne le sont pas.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- PARTIE 1 -->
-        <h2 class="section-h2" style="margin-top:48px">Partie 1 — Ce que la loi dit officiellement</h2>
-        <p class="section-p">Officiellement, pour manipuler des fluides frigorigènes (le gaz de ta clim), la loi française exige deux documents :</p>
-
-        <div class="path-grid" style="margin-top:24px">
-          <div class="path-card">
-            <div class="path-num">DOCUMENT 01</div>
-            <div class="path-title">Attestation d'aptitude (toi en tant que personne)</div>
-            <div class="path-sub">Examen théorique (QCM 1h) + pratique (2h30) passé auprès d'un organisme agréé type DEKRA ou AFNOR. Environ 3 jours de formation. Valable 5 ans. Coût : 300–500€. Taux de réussite : ~70–75%.</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:28px 0 12px">Si tu veux être en règle</div>
+        <p class="section-p" style="margin:0 0 4px">Trois papiers. <strong>Ton statut te permet d'encaisser, tes attestations te permettent de toucher au gaz.</strong></p>
+        <div class="path-grid" style="margin-top:16px;margin-bottom:24px">
+          <div class="path-card" style="cursor:default">
+            <div class="path-num">01 · TON STATUT</div>
+            <div class="path-title">La micro-entreprise</div>
+            <div class="path-sub">Pour facturer et encaisser. Gratuite, en ligne. La CMA vérifie ta qualification.</div>
           </div>
-          <div class="path-card">
-            <div class="path-num">DOCUMENT 02</div>
-            <div class="path-title">Attestation de capacité (ton entreprise)</div>
-            <div class="path-sub">Une fois l'attestation d'aptitude obtenue, tu montes un dossier entreprise auprès d'un organisme agréé. Délai : 2 mois max. Valable 5 ans. Oblige aussi une déclaration annuelle des fluides manipulés.</div>
+          <div class="path-card" style="cursor:default">
+            <div class="path-num">02 · TOI</div>
+            <div class="path-title">Attestation d'aptitude, catégorie V</div>
+            <div class="path-sub">Pour toucher au gaz. Une demi-journée d'évaluation, environ 400 €.</div>
+          </div>
+          <div class="path-card" style="cursor:default">
+            <div class="path-num">03 · TON ENTREPRISE</div>
+            <div class="path-title">Attestation de capacité</div>
+            <div class="path-sub">Pour acheter ton gaz chez les pros. Un dossier, valable 5 ans.</div>
+          </div>
+        </div>
+        <div class="accord-list">
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Il me faut un diplôme ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p>Pas besoin d'être mécanicien de métier. Mais l'entretien de véhicules est une <strong>activité artisanale réglementée</strong> : quand tu t'immatricules, la CMA te demande de justifier d'une qualification.</p>
+              <div class="accord-table">
+                <div class="accord-row"><span>Un diplôme</span><span>CAP, BEP ou titre professionnel du domaine</span></div>
+                <div class="accord-row"><span>Ou de l'expérience</span><span>3 ans dans le métier, comme salarié ou à ton compte</span></div>
+              </div>
+              <p>Tu n'as ni l'un ni l'autre ? Tu peux passer un titre pro ou un CAP en formation adulte, ou t'associer avec quelqu'un de qualifié qui encadre l'activité. Fais valider ton cas par ta CMA avant de t'immatriculer : c'est elle qui tranche.</p>
+            </div>
+          </div>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">C'est quoi, les deux attestations ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p><strong>L'attestation d'aptitude, pour toi.</strong> Catégorie V, celle de la climatisation des véhicules. Une évaluation d'une demi-journée, théorie et pratique, dans un centre habilité comme l'AFPA. Compte environ 400 €.</p><p><strong>L'attestation de capacité, pour ton entreprise.</strong> Un dossier auprès d'un organisme agréé, par exemple DEKRA Certification : il vérifie que tu as une personne attestée et un outillage adapté à tes interventions. Elle est valable 5 ans.</p>
+              <div class="accord-callout">En échange, une obligation simple : chaque année avant le 31 janvier, tu déclares tes mouvements de fluide (ce que tu as acheté, chargé, récupéré). Garde toutes tes factures de gaz.</div>
+            </div>
+          </div>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Quel statut je prends ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p>La <strong>micro-entreprise</strong> (auto-entrepreneur). Elle se crée gratuitement en ligne, sur le guichet unique de l'INPI, et elle colle à ton rythme : tu paies des cotisations seulement sur ce que tu encaisses.</p><p>Tu déclares une activité d'entretien de véhicules : c'est à ce moment que la CMA vérifie ta qualification.</p><p>Deux compléments à prévoir : une <strong>assurance responsabilité civile pro</strong> (une voiture abîmée, c'est elle qui paie, pas toi) et, si tu travailles hors de ta commune, la <strong>carte de commerçant ambulant</strong> : 30 € pour 4 ans. Demande à ta CMA si elle te concerne.</p>
+            </div>
+          </div>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Combien ça coûte d'être en règle ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <div class="accord-table">
+                <div class="accord-row"><span>Micro-entreprise</span><span>0 €</span></div>
+                <div class="accord-row"><span>Attestation d'aptitude</span><span>Environ 400 €</span></div>
+                <div class="accord-row"><span>Attestation de capacité</span><span>Sur devis selon l'organisme, valable 5 ans</span></div>
+                <div class="accord-row"><span>Carte ambulante</span><span>30 € pour 4 ans, si elle te concerne</span></div>
+                <div class="accord-row"><span>Assurance RC pro</span><span>Tous les ans, à comparer</span></div>
+              </div>
+              <p>Demande 2 ou 3 devis pour l'attestation de capacité : les tarifs varient d'un organisme à l'autre. À part l'assurance, ce sont des frais de départ : tu ne les repaies pas chaque été.</p>
+            </div>
+          </div>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Ça prend combien de temps ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <div class="accord-table">
+                <div class="accord-row"><span>Micro-entreprise</span><span>Une demi-heure en ligne</span></div>
+                <div class="accord-row"><span>Attestation d'aptitude</span><span>Une demi-journée, le temps d'avoir une date</span></div>
+                <div class="accord-row"><span>Attestation de capacité</span><span>Un dossier, puis de quelques jours à quelques semaines selon l'organisme</span></div>
+              </div>
+              <p>Dans cet ordre : statut, aptitude, capacité. L'organisme te demandera les deux premiers.</p><p><strong>Le bon calendrier : tu lances tout en janvier, tu es prêt en avril</strong>, avant les premières chaleurs. Si tu dois passer une qualification, commence dès l'automne.</p>
+            </div>
           </div>
         </div>
 
-
-
-        <!-- PARTIE 2 -->
-        <h2 class="section-h2" style="margin-top:56px">Partie 2 — La réalité du terrain (et pourquoi ça passe)</h2>
-        <p class="section-p">Voilà ce que personne ne dit officiellement mais que tout le monde sait dans le milieu :</p>
-
-        <div class="adv-grid" style="margin-top:24px;display:grid;grid-template-columns:1fr;gap:2px">
-
-          <div style="background:var(--dark2);padding:28px 28px;border-left:3px solid var(--gold)">
-            <div style="font-size:16px;font-weight:600;color:var(--cream);margin-bottom:10px">🔍 Les contrôles terrain sont quasi inexistants</div>
-            <p style="font-size:14px;color:var(--ink2);line-height:1.8;color:#888880">Personne ne va frapper à la porte de ton client pour vérifier si t'as tes papiers. Le risque de contrôle physique pendant une prestation est extrêmement faible. Des centaines de prestataires travaillent sans attestation chaque été, sans aucun problème.</p>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:28px 0 12px">Ton argent &amp; ton gaz</div>
+        <div class="accord-list">
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Je bosse que l'été : je paie quoi l'hiver ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p>En micro-entreprise, tes cotisations sont un pourcentage de ce que tu encaisses : <strong>environ 22 %</strong> pour une prestation artisanale. L'hiver, tu n'encaisses rien : <strong>0 € de cotisations</strong>.</p><p>Mais tu déclares quand même, même à zéro, chaque mois ou chaque trimestre : un oubli, c'est une pénalité.</p><p>Autre poste à prévoir : la <strong>CFE</strong>, l'impôt local des entreprises. Rien l'année de ta création, ensuite un montant qui dépend de ta commune.</p>
+              <div class="accord-callout">Le réflexe : mets 30 % de chaque encaissement de côté, sur un compte à part. Cotisations, CFE et impôts sont couverts, et tu n'as jamais de mauvaise surprise.</div>
+            </div>
           </div>
-
-          <div style="background:var(--dark2);padding:28px 28px;border-left:3px solid var(--gold)">
-            <div style="font-size:16px;font-weight:600;color:var(--cream);margin-bottom:10px">⛽ Le vrai blocage : l'achat du gaz officiel</div>
-            <p style="font-size:14px;color:#888880;line-height:1.8">Le seul endroit où l'absence d'attestation peut poser problème, c'est l'achat de gaz auprès de certains distributeurs officiels qui demandent les documents. Solution simple : Leboncoin et Facebook Marketplace. Il y a des dizaines d'annonces partout en France de particuliers et revendeurs qui écoulent des bouteilles sans demander aucun justificatif. Cherche "bouteille R134a" ou "gaz climatisation" dans ta région — tu trouveras facilement.</p>
+          <div class="accord-item">
+            <div class="accord-header" onclick="toggleAccord(this)">
+              <span class="accord-icon">◆</span>
+              <span class="accord-title">Où j'achète mon gaz ?</span>
+              <span class="accord-chev">▶</span>
+            </div>
+            <div class="accord-body">
+              <p>Chez les <strong>fournisseurs pros</strong> (distributeurs de fluides frigorigènes, fournisseurs de pièces auto), en présentant ton attestation de capacité. Tu as des contacts par région, avec les prix, dans tes <a href="#" onclick="goTo('ressources');return false;" style="color:var(--gold);text-decoration:none;font-weight:600">Ressources</a>.</p><p>Pour le <strong>R1234yf</strong>, l'attestation devient <strong>obligatoire pour acheter à partir du 1er janvier 2027</strong>.</p><p>Les bouteilles vendues sans facture ni justificatif, on oublie : tu ne sais pas ce qu'il y a dedans, tu ne peux pas les déclarer, et c'est la clim de ton client que tu risques.</p>
+            </div>
           </div>
-
-          <div style="background:var(--dark2);padding:28px 28px;border-left:3px solid var(--gold)">
-            <div style="font-size:16px;font-weight:600;color:var(--cream);margin-bottom:10px">📆 4 mois d'activité = risque marginal</div>
-            <p style="font-size:14px;color:#888880;line-height:1.8">Tu fais ça d'avril/mai jusqu'à septembre, tu encaisses, tu t'arrêtes. Le profil "petit prestataire saisonnier" est invisible pour les autorités. Ce sont les entreprises régulières, avec des fournisseurs officiels et des clients professionnels, qui font l'objet de vérifications. Pas toi.</p>
-          </div>
-
         </div>
 
-        <!-- PARTIE 3 -->
-        <h2 class="section-h2" style="margin-top:56px">Partie 3 — La solution propre : le statut "entretien automobile"</h2>
-        <p class="section-p">Si tu veux être en règle sans passer par l'attestation fluides frigorigènes, voilà le contournement légal qui fonctionne. C'est pas une zone grise — c'est simplement choisir le bon cadre pour ton activité.</p>
+        <p style="font-size:12px;color:var(--muted2);line-height:1.7;margin:8px 0 56px">À jour : septembre 2026 · Information générale, pas un conseil juridique. Les règles bougent (le 1er janvier 2027 notamment) : fais valider ton cas par ta CMA et par l'organisme qui délivre tes attestations.</p>
 
-        <div style="background:var(--dark2);border:0.5px solid rgba(201,168,76,0.2);border-radius:4px;padding:28px;margin-top:24px">
-          <div style="font-size:16px;font-weight:600;color:var(--cream);margin-bottom:12px">🛠️ Auto-entrepreneur "Entretien & Nettoyage Automobile"</div>
-          <p style="font-size:14px;color:#888880;line-height:1.8">Ce statut ne demande <strong style="color:var(--cream)">aucun diplôme</strong>, aucune attestation, aucune qualification particulière. Tu t'inscris à la CMA comme prestataire d'entretien auto. Et tu factures une "prestation d'entretien climatisation" qui inclut :</p>
-          <ul style="margin-top:16px;list-style:none;display:flex;flex-direction:column;gap:10px">
-            <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--gold);font-weight:700;flex-shrink:0">✓</span><span style="font-size:14px;color:#888880">Remplacement du filtre d'habitacle (100% légal, zéro diplôme)</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--gold);font-weight:700;flex-shrink:0">✓</span><span style="font-size:14px;color:#888880">Nettoyage et désinfection du circuit clim (bombe désinfectante, aucune réglementation)</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--gold);font-weight:700;flex-shrink:0">✓</span><span style="font-size:14px;color:#888880">Vérification visuelle et diagnostic manomètre</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--gold);font-weight:700;flex-shrink:0">✓</span><span style="font-size:14px;color:#888880">Conseils entretien au client</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--gold);font-weight:700;flex-shrink:0">✓</span><span style="font-size:14px;color:#888880">La recharge climatisation</span></li>
-          </ul>
-        </div>
+      
+        <div class="divider"></div>
 
-        <div class="strat-callout" style="margin-top:24px">
-          <div class="strat-callout-title">💡 Pourquoi ça marche légalement</div>
-          <p style="color:#888880">Le statut "entretien automobile" existe précisément pour les petits prestataires qui interviennent chez les particuliers. Ce n'est pas le statut mécanicien (qui lui demande un diplôme). C'est simplement de la prestation de services automobile — non réglementée. Tu n'es pas un garage. Tu es un prestataire d'entretien. Nuance qui change tout.</p>
-        </div>
-
-
-
-        <!-- RÉCAP TABLEAU -->
-        <h2 class="section-h2" style="margin-top:56px">Récap — les deux voies possibles</h2>
-
-        <div style="margin-top:24px;display:grid;grid-template-columns:1fr;gap:2px;border:0.5px solid rgba(201,168,76,0.2);border-radius:4px;overflow:hidden">
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:rgba(201,168,76,0.1);padding:14px 20px;gap:12px">
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600">Niveau</div>
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600">Ce que tu fais</div>
-            <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600">Risque</div>
+        <!-- RÉCAP VIDÉO -->
+        <div class="section reveal" id="recap-video-07">
+          <div class="section-header">
+            <div class="s-icon">🎬</div>
+            <div class="s-title">
+              <div class="s-eyebrow">Récap · 1 min 17</div>
+              <h2>Sans papiers ou en règle : ce qu'il faut savoir</h2>
+            </div>
           </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--dark2);padding:16px 20px;gap:12px;border-top:0.5px solid rgba(201,168,76,0.1)">
-            <div style="font-size:13px;font-weight:600;color:var(--cream)">🔵 Auto-entrepreneur entretien auto</div>
-            <div style="font-size:13px;color:#888880">Déclaration CMA, facturation propre, carte ambulante si besoin</div>
-            <div style="font-size:13px;color:#888880">Nul — tu es en règle</div>
+          <div class="prose">
+            <p>Oui, c'est possible sans être 100 % en règle, et plus de la moitié démarre comme ça avant de se déclarer. Mais ça reste risqué. Pour être en règle, c'est simple : <strong>ton statut, ton attestation d'aptitude et l'attestation de capacité de ton entreprise</strong>.</p>
           </div>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--dark2);padding:16px 20px;gap:12px;border-top:0.5px solid rgba(201,168,76,0.1)">
-            <div style="font-size:13px;font-weight:600;color:var(--cream)">🟡 Voie complète officielle</div>
-            <div style="font-size:13px;color:#888880">Attestation aptitude + attestation capacité entreprise + carte ambulante</div>
-            <div style="font-size:13px;color:#888880">Zéro — full légal</div>
+          <div class="rv-frame">
+            <video controls preload="none" playsinline poster="recap-07-pov-poster.jpg">
+              <source src="recap-07-pov.mp4" type="video/mp4">
+              Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
           </div>
-
-        </div>
-
-        <div class="strat-callout" style="margin-top:32px;border-color:rgba(143,212,160,0.3);background:rgba(45,122,62,0.06)">
-          <div class="strat-callout-title" style="color:#8fd4a0">✅ Notre recommandation pour débuter</div>
-          <p style="color:#888880">Crée ton auto-entrepreneur "entretien automobile" — c'est gratuit, rapide, et tu travailles sereinement. Pour tes 4 mois de saison, c'est amplement suffisant. Si tu veux scaler, passer à la voie complète ou créer une vraie société — là ça se discute.</p>
+          <a class="rv-fallback" href="recap-07-pov.mp4" target="_blank" rel="noopener">La vidéo ne se lance pas ? Ouvrir dans un nouvel onglet ↗</a>
         </div>
 
       </section>
 
+      <!-- ──────── VIDÉOTHÈQUE · ACCÈS RAPIDE ──────── -->
+      <section class="chapter" id="ch-videotheque">
+        <div class="chapter-tag">Accès rapide · Vidéothèque</div>
+        <h1 class="chapter-title">Toutes les vidéos, <em>au même endroit.</em></h1>
+        <p class="chapter-intro">Chaque vidéo est aussi dans son chapitre, au moment où tu en as besoin. Ici, tu les retrouves en deux clics : pour réviser avant la saison, ou sur le terrain, devant la voiture.</p>
+        <div class="vt-meter">
+          <div class="vt-meter-txt"><strong id="vt-seen-n">0</strong> / <span id="vt-total-n">0</span> vidéos vues</div>
+          <div class="vt-meter-bar"><i id="vt-meter-fill"></i></div>
+        </div>
+        <div class="vt-quick">
+          <div class="vt-quick-title">Bloqué sur le terrain ?</div>
+          <div class="vt-quick-sub">Les vidéos à rouvrir devant la voiture.</div>
+          <div class="vt-row" id="vt-quick"></div>
+        </div>
+        <div id="vt-groups"></div>
+        <p class="vt-foot">Une vidéo est cochée « Vue » quand tu l'as regardée presque jusqu'au bout, ici ou dans son chapitre. Ce suivi reste sur ton téléphone ou ton ordinateur.</p>
+      </section>
+
     </div>
   </main>
+</div>
+
+<div class="vt-modal" id="vt-modal" hidden role="dialog" aria-modal="true" aria-label="Lecteur vidéo">
+  <button type="button" class="vt-close" aria-label="Fermer la vidéo">✕</button>
+  <div class="vt-box">
+    <div class="vt-player"><video id="vt-video" controls playsinline preload="metadata"></video></div>
+    <div class="vt-info">
+      <div class="vt-eye"></div>
+      <div class="vt-info-title"></div>
+      <button type="button" class="vt-goto">Voir dans son chapitre →</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -3494,7 +3968,7 @@ function goTo(id) {
   document.getElementById('ch-' + id).classList.add('active');
   document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
   const items = document.querySelectorAll('.sb-item');
-  const map = { intro: 0, jargon: 1, materiel: 2, videos: 3, ressources: 4, strategie: 5, juridique: 6, contact: 7 };
+  const map = { intro: 0, jargon: 1, materiel: 2, videos: 3, ressources: 4, strategie: 5, juridique: 6, contact: 7, videotheque: 8 };
   if (items[map[id]]) items[map[id]].classList.add('active');
   const titleMap = {
     intro: 'Présentation',
@@ -3504,10 +3978,12 @@ function goTo(id) {
     strategie: 'Stratégie commerciale',
     juridique: 'Cadre légal & Statut',
     materiel: 'Matériel recommandé',
-    contact: 'FAQ & Contact'
+    contact: 'FAQ & Contact',
+    videotheque: 'Toutes les vidéos'
   };
   document.getElementById('bc-current').textContent = titleMap[id];
   markChapter(id);
+  if (id === 'videotheque' && window.vtShow) window.vtShow();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (window.innerWidth < 768) toggleSidebar(true);
 }
@@ -3780,6 +4256,217 @@ applyProgressOnLoad();
   document.addEventListener('click', function (ev) {
     if (ev.target.closest && ev.target.closest('.sb-item, .path-card')) setTimeout(revealAll, 350);
   }, true);
+})();
+/* ===== VIDÉOTHÈQUE — toutes les vidéos de la formation, au même endroit =====
+   La liste est lue dans la page elle-même : une vidéo ajoutée dans un chapitre
+   apparaît ici toute seule. Un bloc masqué (attribut hidden) n'apparaît pas. */
+(function () {
+  var CHAPS = [
+    ['intro', '01', 'Présentation'],
+    ['jargon', '02', 'Jargon & Fonctionnement'],
+    ['materiel', '03', 'Matériel recommandé'],
+    ['videos', '04', 'Process technique'],
+    ['ressources', '05', 'Ressources & Tips'],
+    ['strategie', '06', 'Stratégie commerciale'],
+    ['juridique', '07', 'Cadre légal & Statut'],
+    ['contact', '08', 'FAQ & Contact']
+  ];
+  /* durées en secondes (les vidéos sont en preload="none" : la page ne les connaît pas avant lecture) */
+  var DUR = {
+    'intro-formation.mp4': 134, 'recap-02-pov.mp4': 64, 'recap-03-final.mp4': 116, 'recap-06-pov.mp4': 104, 'recap-07-pov.mp4': 77,
+    'video-1-materiel-v2.mp4': 109, 'video-2-raccords-v2.mp4': 55, 'video-3-installation-v2.mp4': 47, 'video-4-fuite-v2.mp4': 61, 'video-5-compresseur-v3.mp4': 65,
+    'ch02-s01-les-deux-gaz.mp4': 53, 'ch02-s05-circuit-ferme.mp4': 43, 'ch02-s06-diagnostiquer.mp4': 46,
+    'annexe-01-valves.mp4': 51, 'annexe-02-gaz.mp4': 38, 'annexe-04-organisation.mp4': 45, 'annexe-05-circuit.mp4': 43,
+    'annexe-06-air-pas-assez-froid.mp4': 37, 'annexe-07-basse-ou-haute.mp4': 39, 'annexe-08-manometre.mp4': 42, 'annexe-09-fuite.mp4': 45,
+    'annexe-10-etre-trouve.mp4': 42, 'sos-terrain.mp4': 180, 'face-aux-pros.mp4': 121, 'face-au-client.mp4': 131, 'guide-interactif-tuto.mp4': 47
+  };
+  /* titres plus parlants hors de leur chapitre */
+  var NAMES = {
+    'intro-formation.mp4': ['Bienvenue', 'Comment marche la formation'],
+    'recap-02-pov.mp4': ['Récap 02', 'Ta première recharge'],
+    'recap-03-final.mp4': ['Récap 03', 'Ton kit, article par article'],
+    'recap-06-pov.mp4': ['Récap 06', 'Les 6 canaux pour trouver tes clients'],
+    'recap-07-pov.mp4': ['Récap 07', 'Sans papiers ou en règle'],
+    'sos-terrain.mp4': ['Entraînement', 'SOS terrain : les 5 appels'],
+    'face-aux-pros.mp4': ['Entraînement', 'Face aux pros : garage, parc, flotte'],
+    'face-au-client.mp4': ['Entraînement', 'Face au client : les 5 objections'],
+    'guide-interactif-tuto.mp4': ["Mode d'emploi", 'Le guide interactif']
+  };
+  /* à rouvrir devant la voiture */
+  var QUICK = ['sos-terrain.mp4', 'annexe-01-valves.mp4', 'annexe-07-basse-ou-haute.mp4', 'annexe-08-manometre.mp4',
+               'annexe-09-fuite.mp4', 'annexe-06-air-pas-assez-froid.mp4', 'guide-interactif-tuto.mp4'];
+
+  function srcOf(v) { var s = v.querySelector('source'); return (s || v).getAttribute('src') || ''; }
+  function txt(el) { return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; }
+  function fmt(sec) {
+    if (!sec) return '';
+    if (sec < 60) return sec + ' s';
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ' min' + (s ? ' ' + (s < 10 ? '0' : '') + s : '');
+  }
+  function seenMap() { if (!progress.seen) progress.seen = {}; return progress.seen; }
+
+  var ITEMS = null;
+  function collect() {
+    var list = [];
+    CHAPS.forEach(function (c) {
+      var ch = document.getElementById('ch-' + c[0]);
+      if (!ch) return;
+      ch.querySelectorAll('video').forEach(function (v) {
+        if (v.closest('[hidden]')) return;
+        var src = srcOf(v);
+        if (!src) return;
+        var blk = v.closest('.vx, .video-card, .intro-video-block, .section') || v;
+        var kind = '', title = '';
+        if (blk.classList.contains('vx')) {
+          kind = txt(blk.querySelector('.vx-eye')).split('·')[0].trim();
+          title = txt(blk.querySelector('.vx-title'));
+        } else if (blk.classList.contains('video-card')) {
+          kind = 'Vidéo terrain ' + txt(blk.querySelector('.video-num'));
+          title = txt(blk.querySelector('.video-info-title'));
+        } else {
+          kind = txt(blk.querySelector('.s-eyebrow')).split('·')[0].trim();
+          title = txt(blk.querySelector('h2'));
+        }
+        if (NAMES[src]) { kind = NAMES[src][0]; title = NAMES[src][1]; }
+        if (!blk.id) blk.id = 'vt-b' + list.length;
+        list.push({ src: src, poster: v.getAttribute('poster') || '', kind: kind, title: title,
+                    dur: DUR[src] || 0, cid: c[0], cnum: c[1], clabel: c[2], block: blk });
+      });
+    });
+    return list;
+  }
+
+  function card(it) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'vt-card';
+    b.dataset.src = it.src;
+    b.setAttribute('aria-label', 'Lire la vidéo : ' + it.title);
+    b.innerHTML = '<div class="vt-thumb"><img loading="lazy" alt=""><span class="vt-play" aria-hidden="true">▶</span>' +
+      '<span class="vt-dur"></span><span class="vt-seen">✓ Vue</span></div><div><div class="vt-eye"></div><div class="vt-title"></div></div>';
+    b.querySelector('img').src = it.poster;
+    b.querySelector('.vt-dur').textContent = fmt(it.dur);
+    b.querySelector('.vt-eye').textContent = it.kind;
+    b.querySelector('.vt-title').textContent = it.title;
+    b.addEventListener('click', function () { openPlayer(it, b); });
+    return b;
+  }
+
+  var built = false;
+  function build() {
+    ITEMS = collect();
+    var quick = document.getElementById('vt-quick'), groups = document.getElementById('vt-groups');
+    if (!quick || !groups) return;
+    quick.innerHTML = ''; groups.innerHTML = '';
+    QUICK.forEach(function (s) {
+      var it = ITEMS.filter(function (x) { return x.src === s; })[0];
+      if (it) quick.appendChild(card(it));
+    });
+    CHAPS.forEach(function (c) {
+      var mine = ITEMS.filter(function (x) { return x.cid === c[0]; });
+      if (!mine.length) return;
+      var h = document.createElement('div');
+      h.className = 'vt-h';
+      h.innerHTML = '<span class="vt-h-num"></span><span class="vt-h-title"></span><button type="button" class="vt-h-go">Ouvrir le chapitre →</button>';
+      h.querySelector('.vt-h-num').textContent = c[1];
+      h.querySelector('.vt-h-title').textContent = c[2];
+      h.querySelector('.vt-h-go').addEventListener('click', function () { goTo(c[0]); });
+      var g = document.createElement('div');
+      g.className = 'vt-grid';
+      mine.forEach(function (it) { g.appendChild(card(it)); });
+      groups.appendChild(h); groups.appendChild(g);
+    });
+    built = true;
+    refresh();
+  }
+
+  function refresh() {
+    if (!ITEMS) ITEMS = collect();
+    var seen = seenMap(), n = 0;
+    ITEMS.forEach(function (it) { if (seen[it.src]) n++; });
+    document.querySelectorAll('.vt-card').forEach(function (b) { b.classList.toggle('is-seen', !!seen[b.dataset.src]); });
+    var total = ITEMS.length;
+    var a = document.getElementById('vt-seen-n'), t = document.getElementById('vt-total-n'), f = document.getElementById('vt-meter-fill'), s = document.getElementById('sb-vt-count');
+    if (a) a.textContent = n;
+    if (t) t.textContent = total;
+    if (f) f.style.width = (total ? Math.round(n / total * 100) : 0) + '%';
+    if (s) s.textContent = total;
+  }
+
+  function markSeen(src) {
+    if (!src) return;
+    var seen = seenMap();
+    if (seen[src]) return;
+    seen[src] = 1;
+    saveProgress();
+    refresh();
+  }
+
+  /* ── lecteur ── */
+  var modal, mv, lastFocus = null, current = null;
+  function openPlayer(it, from) {
+    modal = modal || document.getElementById('vt-modal');
+    mv = mv || document.getElementById('vt-video');
+    if (!modal || !mv) return;
+    current = it; lastFocus = from || null;
+    modal.querySelector('.vt-eye').textContent = it.kind + ' · ' + 'Chapitre ' + it.cnum;
+    modal.querySelector('.vt-info-title').textContent = it.title;
+    mv.setAttribute('poster', it.poster);
+    mv.setAttribute('src', it.src);
+    modal.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    var p = mv.play(); if (p && p.catch) p.catch(function () {});
+    modal.querySelector('.vt-close').focus();
+  }
+  function closePlayer() {
+    if (!modal || modal.hidden) return;
+    mv.pause(); mv.removeAttribute('src'); mv.load();
+    modal.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  function gotoBlock() {
+    var it = current; closePlayer();
+    if (!it) return;
+    goTo(it.cid);
+    setTimeout(function () {
+      it.block.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      it.block.classList.remove('vt-flash'); void it.block.offsetWidth; it.block.classList.add('vt-flash');
+    }, 450);
+  }
+
+  /* ── suivi « vue » : n'importe quelle vidéo de la page, regardée à 90 % ── */
+  document.addEventListener('timeupdate', function (e) {
+    var v = e.target;
+    if (!(v instanceof HTMLVideoElement) || !v.duration) return;
+    if (v.currentTime / v.duration >= 0.9) markSeen(srcOf(v));
+  }, true);
+  document.addEventListener('ended', function (e) { if (e.target instanceof HTMLVideoElement) markSeen(srcOf(e.target)); }, true);
+  /* une seule vidéo à la fois */
+  document.addEventListener('play', function (e) {
+    var t = e.target;
+    if (!(t instanceof HTMLVideoElement)) return;
+    document.querySelectorAll('video').forEach(function (o) { if (o !== t && !o.paused) o.pause(); });
+  }, true);
+
+  document.addEventListener('DOMContentLoaded', init);
+  if (document.readyState !== 'loading') init();
+  var inited = false;
+  function init() {
+    if (inited) return; inited = true;
+    modal = document.getElementById('vt-modal');
+    mv = document.getElementById('vt-video');
+    if (modal) {
+      modal.querySelector('.vt-close').addEventListener('click', closePlayer);
+      modal.querySelector('.vt-goto').addEventListener('click', gotoBlock);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closePlayer(); });
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePlayer(); });
+    refresh();
+  }
+
+  window.vtShow = function () { if (!built) build(); else refresh(); };
 })();
 </script>
 <!-- ===== Marquage membre (ajoute par la mise en securite) ===== -->
