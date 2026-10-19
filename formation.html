@@ -4582,13 +4582,7 @@ applyProgressOnLoad();
 #abz-badge b{color:#c9a84c;font-weight:600}
 #abz-badge a{color:#8a877f;text-decoration:none;margin-left:9px;border-left:1px solid rgba(255,255,255,.14);padding-left:9px}
 #abz-badge a:hover{color:#c9a84c}
-#abz-tatouage{position:fixed;inset:0;z-index:99997;pointer-events:none;display:none;
-  opacity:.055;overflow:hidden;font:600 13px/1 system-ui,sans-serif;color:#c9a84c;
-  transform:rotate(-24deg) scale(1.5);white-space:nowrap}
-#abz-tatouage div{padding:34px 0;letter-spacing:.3em}
-@media print{#abz-tatouage{opacity:.16}}
 </style>
-<div id="abz-tatouage" aria-hidden="true"></div>
 <div id="abz-badge"></div>
 <script>
 (function () {
@@ -4606,13 +4600,6 @@ applyProgressOnLoad();
       document.getElementById('sb-licence').hidden = false;
       var pm = document.getElementById('pb-mail'); if (pm && !pm.value) pm.value = j.email;
 
-      var t = document.getElementById('abz-tatouage'), html = '';
-      for (var i = 0; i < 28; i++) html += '<div></div>';
-      t.innerHTML = html;
-      [].forEach.call(t.children, function (d) {
-        d.textContent = (j.email + '   ').repeat(14);
-      });
-      t.style.display = 'block';
     })
     .catch(function () { /* hors ligne : on n'empeche jamais la lecture */ });
 })();
